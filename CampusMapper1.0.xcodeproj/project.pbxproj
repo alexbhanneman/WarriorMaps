@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F01AC8D560004DC3EA /* AppDelegate.swift */; };
 		570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F21AC8D560004DC3EA /* ViewController.swift */; };
-		570E48F61AC8D560004DC3EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F41AC8D560004DC3EA /* Main.storyboard */; };
 		570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F71AC8D560004DC3EA /* Images.xcassets */; };
 		570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F91AC8D560004DC3EA /* LaunchScreen.xib */; };
 		570E49071AC8D560004DC3EA /* CampusMapper1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E49061AC8D560004DC3EA /* CampusMapper1_0Tests.swift */; };
@@ -30,7 +29,6 @@
 		570E48EF1AC8D560004DC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570E48F01AC8D560004DC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570E48F21AC8D560004DC3EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		570E48F51AC8D560004DC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		570E48F71AC8D560004DC3EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		570E48FA1AC8D560004DC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		570E49001AC8D560004DC3EA /* CampusMapper1.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusMapper1.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +77,6 @@
 			children = (
 				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
 				570E48F21AC8D560004DC3EA /* ViewController.swift */,
-				570E48F41AC8D560004DC3EA /* Main.storyboard */,
 				570E48F71AC8D560004DC3EA /* Images.xcassets */,
 				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
 				570E48EE1AC8D560004DC3EA /* Supporting Files */,
@@ -192,7 +189,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570E48F61AC8D560004DC3EA /* Main.storyboard in Resources */,
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 			);
@@ -236,14 +232,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		570E48F41AC8D560004DC3EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				570E48F51AC8D560004DC3EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		570E48F91AC8D560004DC3EA /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -407,6 +395,7 @@
 				570E490C1AC8D560004DC3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		570E490D1AC8D560004DC3EA /* Build configuration list for PBXNativeTarget "CampusMapper1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +404,7 @@
 				570E490F1AC8D560004DC3EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
