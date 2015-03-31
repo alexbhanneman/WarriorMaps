@@ -18,17 +18,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let map = MKMapView()
     var location: CLLocationCoordinate2D
     var matchingItems: [MKMapItem] = [MKMapItem]()
-    var mapView: MKMapView!
-    var searchText: UITextField = UITextField(frame:CGRectMake(200, 50, 400, 50))
+    var locationManager = CLLocationManager()
+    
+    let searchIcon: UIImageView = UIImageView(image: UIImage(named: "search.png"))
+    var searchText: UITextField = UITextField(frame:CGRectMake(60, -100, 400, 50))
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         let screenSize: CGSize = UIScreen.mainScreen().bounds.size
         let centerX: CGFloat = screenSize.width / 2
         let centerY: CGFloat = screenSize.height / 2
-        location = CLLocationCoordinate2D(latitude: 44.0474, longitude: -91.643284)
-        var locManager = CLLocationManager() //get current location
-        locManager.requestWhenInUseAuthorization()
+        self.location = CLLocationCoordinate2D(latitude: 44.0474, longitude: -91.643284)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -38,6 +38,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         self.view = map
         
         //SEARCH BAR
+        searchIcon.frame = CGRectMake(10,20,50,50)
+        searchIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "animate"))
+        searchIcon.userInteractionEnabled = true
+        searchIcon.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(searchIcon)
+        
         searchText.placeholder = "Search For a Place"
         searchText.backgroundColor = UIColor.whiteColor()
         searchText.borderStyle = UITextBorderStyle.Bezel
@@ -45,7 +51,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         searchText.returnKeyType = UIReturnKeyType.Search
         searchText.clearButtonMode = UITextFieldViewMode.Always
         searchText.delegate = self
-        self.view.addSubview(searchText)
+        
+        
+        // SHOW CURRENT USER LOCATION
+        map.showsUserLocation = true
+        
+        
+        //USER LOCATION AS PIN
+//        locationManager = CLLocationManager()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -62,31 +79,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         return false
     }
     
-//    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
-//        let annotationView: MKPinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "MyPin")
-//        if annotation.title == HOME {
-//            annotationView.pinColor = MKPinAnnotationColor.Green
-//        }
-//        else {
-//            annotationView.pinColor = MKPinAnnotationColor.Red
-//        }
-//        annotationView.annotation = annotation
-//        annotationView.canShowCallout = true
-//        return annotationView
-//    }
-//    
-//    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKPinAnnotationView!) {
-//        view.pinColor = MKPinAnnotationColor.Purple
-//    }
-//    
-//    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKPinAnnotationView!) {
-//        if view.annotation.title == HOME {
-//            view.pinColor = MKPinAnnotationColor.Green
-//        }
-//        else {
-//            view.pinColor = MKPinAnnotationColor.Red
-//        }
-//    }
+    func animate(){
+        let yPosition = self.searchText.frame.origin.y
+
+        if (yPosition == -100)  //if search bar is collapsed then expand it
+        {
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.searchIcon.removeFromSuperview()   //needed so searchIcon stays above searchText
+                self.view.addSubview(self.searchIcon)
+                self.searchText.frame = CGRectMake(60,20,400,50)
+                self.view.addSubview(self.searchText)
+                },
+                completion: { (complete BOOL) in
+                    
+            })
+        }
+        else    //search bar is expanded, collapse it
+        {
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.searchIcon.removeFromSuperview() //needed so searchIcon stays above searchText
+                self.view.addSubview(self.searchIcon)
+                self.searchText.frame = CGRectMake(60,-100,400,50)
+                },
+                completion: { (complete BOOL) in
+                    self.searchText.removeFromSuperview()
+            })
+        }
+    }
     
     func performSearch() {
         matchingItems.removeAll()
@@ -122,7 +141,35 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
         })
     }
-
+    
+// THIS IS TO PIN USER'S LOCATION
+//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+//        let location = locations.last as CLLocation
+//        
+//        let point = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+//        
+//        var annotation = MKPointAnnotation()
+//        annotation.coordinate = point
+//        annotation.title = "User Location"
+//        self.map.addAnnotation(annotation)
+//        
+//    }
+    
+    
+//      ADJUSTING ANNOTATION COLORS
+//
+//    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKPinAnnotationView!) {
+//        view.pinColor = MKPinAnnotationColor.Purple
+//    }
+//    
+//    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKPinAnnotationView!) {
+//        if view.annotation.title == HOME {
+//            view.pinColor = MKPinAnnotationColor.Green
+//        }
+//        else {
+//            view.pinColor = MKPinAnnotationColor.Red
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
