@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */; };
+		1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */; };
+		1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */; };
+		1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D06111ACCD629000F674B /* CampusCoords.plist */; };
+		1C8D06141ACCD755000F674B /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D06131ACCD755000F674B /* Campus.swift */; };
+		1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */; };
+		1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */; };
+		1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */; };
 		570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F01AC8D560004DC3EA /* AppDelegate.swift */; };
 		570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F21AC8D560004DC3EA /* ViewController.swift */; };
 		570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F71AC8D560004DC3EA /* Images.xcassets */; };
@@ -26,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusTestOverlay.png; sourceTree = "<group>"; };
+		1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlay.swift; sourceTree = "<group>"; };
+		1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
+		1C8D06111ACCD629000F674B /* CampusCoords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusCoords.plist; sourceTree = "<group>"; };
+		1C8D06131ACCD755000F674B /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlayView.swift; sourceTree = "<group>"; };
+		1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_park.png; sourceTree = "<group>"; };
+		1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
 		570E48EB1AC8D55F004DC3EA /* CampusMapper1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMapper1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570E48EF1AC8D560004DC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570E48F01AC8D560004DC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,11 +93,11 @@
 		570E48ED1AC8D55F004DC3EA /* CampusMapper1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				575579111ACB616E002AE6ED /* search.png */,
-				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
 				570E48F21AC8D560004DC3EA /* ViewController.swift */,
-				570E48F71AC8D560004DC3EA /* Images.xcassets */,
-				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
+				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
+				1C8D06131ACCD755000F674B /* Campus.swift */,
+				1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */,
+				1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */,
 				570E48EE1AC8D560004DC3EA /* Supporting Files */,
 			);
 			path = CampusMapper1.0;
@@ -90,6 +106,14 @@
 		570E48EE1AC8D560004DC3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */,
+				1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */,
+				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
+				570E48F71AC8D560004DC3EA /* Images.xcassets */,
+				575579111ACB616E002AE6ED /* search.png */,
+				1C8D06111ACCD629000F674B /* CampusCoords.plist */,
+				1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */,
+				1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */,
 				570E48EF1AC8D560004DC3EA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,8 +217,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
+				1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */,
 				575579121ACB616E002AE6ED /* search.png in Resources */,
+				1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
+				1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */,
+				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
+				1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */,
+				1C8D06141ACCD755000F674B /* Campus.swift in Sources */,
 				570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */,
 				570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */,
+				1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

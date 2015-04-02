@@ -15,6 +15,7 @@ let METERS_PER_MILE = 1609.344
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate{
     
+    let manager = CLLocationManager()
     let map = MKMapView()
     var location: CLLocationCoordinate2D
     var matchingItems: [MKMapItem] = [MKMapItem]()
@@ -23,6 +24,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let searchIcon: UIImageView = UIImageView(image: UIImage(named: "search.png"))
     var searchText: UITextField = UITextField(frame:CGRectMake(60, -100, 400, 50))
     
+    var campus: Campus
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         let screenSize: CGSize = UIScreen.mainScreen().bounds.size
@@ -30,7 +33,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let centerY: CGFloat = screenSize.height / 2
         self.location = CLLocationCoordinate2D(latitude: 44.0474, longitude: -91.643284)
         
+        campus = Campus(filename: "CampusCoords")
+        
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        manager.requestWhenInUseAuthorization()
+        manager.distanceFilter = kCLDistanceFilterNone
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.delegate = self
+        manager.startUpdatingLocation()
         
         map.delegate = self
         map.frame = UIScreen.mainScreen().bounds
@@ -63,6 +74,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 //        locationManager.desiredAccuracy = kCLLocationAccuracyBest
 //        locationManager.requestWhenInUseAuthorization()
 //        locationManager.startUpdatingLocation()
+        
+        
+        
+        //add overlay
+        addOverLay()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -170,15 +186,43 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 //            view.pinColor = MKPinAnnotationColor.Red
 //        }
 //    }
-    
+
+//THIS IS NOT CALLED ???
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func addOverLay() {
+        println("Overlay Called")
+        let latDelta = campus.overlayTopLeftCoordinate.latitude -
+            campus.overlayBottomRightCoordinate.latitude
+        
+        let span = MKCoordinateSpanMake(fabs(latDelta), 0.0)
+        
+        let region = MKCoordinateRegionMake(campus.midCoordinate, span)
+        
+        map.region = region
+        
+        let overlay = CampusOverlay(campus: campus)
+        map.addOverlay(overlay)
+    }
+    
+    //implements MKMapViewDelegate delegate method
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay is CampusOverlay {
+            let CampusImage = UIImage(named: "campusTestOverlay.png")
+            let overlayView = CampusMapOverlayView(overlay: overlay, overlayImage: CampusImage!)
+            
+            return overlayView
+        } 
+        
+        return nil
     }
 }
 
