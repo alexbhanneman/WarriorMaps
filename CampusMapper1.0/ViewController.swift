@@ -216,7 +216,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //implements MKMapViewDelegate delegate method
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is CampusOverlay {
-            let CampusImage = UIImage(named: "campusTestOverlay.png")
+            let CampusImage = UIImage(named: "mapsLatLongOverlay3.png")
             let overlayView = CampusMapOverlayView(overlay: overlay, overlayImage: CampusImage!)
             
             return overlayView

@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C53B6B01AD89CDA00B74C57 /* campusTestOverlay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6AF1AD89CDA00B74C57 /* campusTestOverlay1.png */; };
+		1C53B6B21AD89FFF00B74C57 /* campusTestOverlay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6B11AD89FFF00B74C57 /* campusTestOverlay2.png */; };
+		1C53B6B41AD8C8DD00B74C57 /* mapsLatLong.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6B31AD8C8DD00B74C57 /* mapsLatLong.png */; };
+		1C53B6B61AD8CBAE00B74C57 /* mapsLatLongOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6B51AD8CBAE00B74C57 /* mapsLatLongOverlay.png */; };
+		1C53B6B81AD8D09E00B74C57 /* appleMapsLat.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6B71AD8D09E00B74C57 /* appleMapsLat.png */; };
+		1C53B6BA1AD8DAED00B74C57 /* mapsLatLongOverlay1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6B91AD8DAED00B74C57 /* mapsLatLongOverlay1.png */; };
+		1C53B6BC1AD8E0D100B74C57 /* mapsLatLongOverlay2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6BB1AD8E0D100B74C57 /* mapsLatLongOverlay2.png */; };
+		1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */; };
 		1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */; };
 		1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */; };
 		1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C53B6AF1AD89CDA00B74C57 /* campusTestOverlay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusTestOverlay1.png; sourceTree = "<group>"; };
+		1C53B6B11AD89FFF00B74C57 /* campusTestOverlay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusTestOverlay2.png; sourceTree = "<group>"; };
+		1C53B6B31AD8C8DD00B74C57 /* mapsLatLong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLong.png; sourceTree = "<group>"; };
+		1C53B6B51AD8CBAE00B74C57 /* mapsLatLongOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLongOverlay.png; sourceTree = "<group>"; };
+		1C53B6B71AD8D09E00B74C57 /* appleMapsLat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appleMapsLat.png; sourceTree = "<group>"; };
+		1C53B6B91AD8DAED00B74C57 /* mapsLatLongOverlay1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLongOverlay1.png; sourceTree = "<group>"; };
+		1C53B6BB1AD8E0D100B74C57 /* mapsLatLongOverlay2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLongOverlay2.png; sourceTree = "<group>"; };
+		1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLongOverlay3.png; sourceTree = "<group>"; };
 		1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusTestOverlay.png; sourceTree = "<group>"; };
 		1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlay.swift; sourceTree = "<group>"; };
 		1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
@@ -106,6 +122,14 @@
 		570E48EE1AC8D560004DC3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */,
+				1C53B6BB1AD8E0D100B74C57 /* mapsLatLongOverlay2.png */,
+				1C53B6B71AD8D09E00B74C57 /* appleMapsLat.png */,
+				1C53B6B91AD8DAED00B74C57 /* mapsLatLongOverlay1.png */,
+				1C53B6B51AD8CBAE00B74C57 /* mapsLatLongOverlay.png */,
+				1C53B6B31AD8C8DD00B74C57 /* mapsLatLong.png */,
+				1C53B6AF1AD89CDA00B74C57 /* campusTestOverlay1.png */,
+				1C53B6B11AD89FFF00B74C57 /* campusTestOverlay2.png */,
 				1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */,
 				1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */,
 				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
@@ -216,14 +240,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C53B6BC1AD8E0D100B74C57 /* mapsLatLongOverlay2.png in Resources */,
+				1C53B6B01AD89CDA00B74C57 /* campusTestOverlay1.png in Resources */,
+				1C53B6B61AD8CBAE00B74C57 /* mapsLatLongOverlay.png in Resources */,
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
+				1C53B6BA1AD8DAED00B74C57 /* mapsLatLongOverlay1.png in Resources */,
+				1C53B6B21AD89FFF00B74C57 /* campusTestOverlay2.png in Resources */,
+				1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */,
 				1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */,
 				575579121ACB616E002AE6ED /* search.png in Resources */,
 				1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 				1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */,
+				1C53B6B81AD8D09E00B74C57 /* appleMapsLat.png in Resources */,
 				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
 				1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */,
+				1C53B6B41AD8C8DD00B74C57 /* mapsLatLong.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
