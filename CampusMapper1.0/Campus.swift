@@ -52,18 +52,18 @@ class Campus {
         let filePath = NSBundle.mainBundle().pathForResource(filename, ofType: "plist")
         let properties = NSDictionary(contentsOfFile: filePath!)
         
-        let midPoint = CGPointFromString(properties!["midCoord"] as String)
+        let midPoint = CGPointFromString(properties!["midCoord"] as! String)
         midCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(midPoint.x), CLLocationDegrees(midPoint.y))
         
-        let overlayTopLeftPoint = CGPointFromString(properties!["overlayTopLeftCoord"] as String)
+        let overlayTopLeftPoint = CGPointFromString(properties!["overlayTopLeftCoord"]as! String)
         overlayTopLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopLeftPoint.x),
             CLLocationDegrees(overlayTopLeftPoint.y))
         
-        let overlayTopRightPoint = CGPointFromString(properties!["overlayTopRightCoord"] as String)
+        let overlayTopRightPoint = CGPointFromString(properties!["overlayTopRightCoord"] as! String)
         overlayTopRightCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopRightPoint.x),
             CLLocationDegrees(overlayTopRightPoint.y))
         
-        let overlayBottomLeftPoint = CGPointFromString(properties!["overlayBottomLeftCoord"] as String)
+        let overlayBottomLeftPoint = CGPointFromString(properties!["overlayBottomLeftCoord"] as! String)
         overlayBottomLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayBottomLeftPoint.x),
             CLLocationDegrees(overlayBottomLeftPoint.y))
         

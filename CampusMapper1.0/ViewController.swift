@@ -142,7 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             } else {
                 println("Matches found")
                 
-                for item in response.mapItems as [MKMapItem] {
+                for item in response.mapItems as! [MKMapItem] {
                     println("Name = \(item.name)")
                     println("Phone = \(item.phoneNumber)")
                     
