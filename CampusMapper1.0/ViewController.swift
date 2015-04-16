@@ -158,7 +158,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         })
     }
     
-// THIS IS TO PIN USER'S LOCATION
+//      THIS IS TO PIN USER'S LOCATION
 //    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
 //        let location = locations.last as CLLocation
 //        
