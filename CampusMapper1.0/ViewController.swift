@@ -79,6 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         //add overlay
         addOverLay()
+        addBuildingAnnotations()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -157,37 +158,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
         })
     }
-    
-//      THIS IS TO PIN USER'S LOCATION
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//        let location = locations.last as CLLocation
-//        
-//        let point = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//        
-//        var annotation = MKPointAnnotation()
-//        annotation.coordinate = point
-//        annotation.title = "User Location"
-//        self.map.addAnnotation(annotation)
-//        
-//    }
-    
-    
-//      ADJUSTING ANNOTATION COLORS
-//
-//    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKPinAnnotationView!) {
-//        view.pinColor = MKPinAnnotationColor.Purple
-//    }
-//    
-//    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKPinAnnotationView!) {
-//        if view.annotation.title == HOME {
-//            view.pinColor = MKPinAnnotationColor.Green
-//        }
-//        else {
-//            view.pinColor = MKPinAnnotationColor.Red
-//        }
-//    }
 
-//THIS IS NOT CALLED ???
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -213,7 +184,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         map.addOverlay(overlay)
     }
     
-    //implements MKMapViewDelegate delegate method
+    //implements MKMapViewDelegate delegate method for overlay
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is CampusOverlay {
             let CampusImage = UIImage(named: "mapsLatLongOverlay3.png")
@@ -224,6 +195,169 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         return nil
     }
+    //implements MKMapViewDelegate delegate method for annotations
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if (annotation is MKUserLocation) {
+            //if annotation is not an MKPointAnnotation (eg. MKUserLocation),
+            //return nil so map draws default view for it (eg. blue dot)...
+            return nil
+        }else {
+            let annotationView = BuildingAnnotationView(annotation: annotation, reuseIdentifier: "Campus Building")
+            //annotationView.canShowCallout = true
+            return annotationView
+        }
+    }
+    
+    func addBuildingAnnotations() {
+        println("Adding Building Annotations...")
+        let filePath = NSBundle.mainBundle().pathForResource("CampusCoordsBuildings", ofType: "plist")
+        let buildings = NSArray(contentsOfFile: filePath!)
+        for building in buildings! {
+            let point = CGPointFromString(building["location"] as! String)
+            let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(point.x), CLLocationDegrees(point.y))
+            let title = building["name"] as! String
+            let address = building["address"] as! String
+            let subtitle = building["subtitle"] as! String
+            let departments = building["departments"] as! String
+            let links = building["links"] as! String
+            let buildingAnno = BuildingAnnotation(coordinate: coordinate, title: title, subtitle: subtitle, address: address, departments: departments, links: links)
+            map.addAnnotation(buildingAnno)
+        }
+    }
+    
+    
+    //used for custom Callout view when view is selected
+    //needs to show custom calloutView
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        if let buildingAnnotationView = view as? BuildingAnnotationView {
+            updateCalloutLocation(buildingAnnotationView)
+        }
+    }
+    
+    
+    func updateCalloutLocation(buildingAnnotationView: BuildingAnnotationView) {
+        var buildAnno = buildingAnnotationView.annotation as! BuildingAnnotation
+        var formattedText: String = formatLabelString(buildAnno.address, subtitle: buildAnno.subtitle, departments: buildAnno.departments, links: buildAnno.links)
+        let font = UIFont(name: "Helvetica", size: 14.0)
+        let height = heightForView(formattedText, font: font, width: 300-20)
+        
+        println("height: \(height)")
+        //need to add callout to view based on location
+        println("Callout Added..")
+        var calloutSize: CGSize = CGSizeMake(300.0, 30+90+20+height)
+        var calloutOffset: CGPoint = buildingAnnotationView.calloutOffset
+        var centerOffset = buildingAnnotationView.centerOffset
+        var calloutView: CustomCalloutView = CustomCalloutView(frame: CGRectMake(calloutOffset.x, calloutOffset.y, calloutSize.width, calloutSize.height))
+        
+        calloutView.backgroundColor = UIColor.lightGrayColor()
+        calloutView.layer.borderColor = UIColor.whiteColor().CGColor
+        calloutView.layer.borderWidth = 6.0
+        calloutView.layer.cornerRadius = 8.0
+        calloutView.clipsToBounds = true
+//TODO: after working add these all to CustomCalloutView
+        
+        //title
+        var title: UILabel = UILabel(frame: CGRectMake(0, 5, calloutView.frame.width, 30))
+        title.backgroundColor = hexStringToUIColor("#4f109b")
+        title.textColor = UIColor.whiteColor()
+        title.text = buildingAnnotationView.annotation.title
+        title.textAlignment = NSTextAlignment.Center
+        calloutView.addSubview(title)
+        
+        //image
+        var imageView: UIImageView = UIImageView(image: UIImage(named: "\(buildAnno.title).jpg"))
+        imageView.frame = CGRectMake(0, 35, calloutView.frame.width, 100)
+        calloutView.addSubview(imageView)
+        
+        //description
+        var subtitle: UILabel = UILabel(frame: CGRectMake(10, 35+100, calloutView.frame.width-20, height)) //height based off
+        subtitle.backgroundColor = UIColor.lightGrayColor()
+        subtitle.textColor = UIColor.blackColor()
+        subtitle.text = formattedText
+        subtitle.textAlignment = NSTextAlignment.Left
+        subtitle.numberOfLines = 0
+        subtitle.font = font
+        calloutView.addSubview(subtitle)
+        
+        buildingAnnotationView.addSubview(calloutView)
+    }
+    
+    func formatLabelString(address: String, subtitle: String, departments: String, links: String) -> String {
+        println("\(address) \n\(subtitle) \n\(departments) \n\(links)")
+        
+        //address first line
+        var addressFormatted: String = ""
+        addressFormatted = "\(address)\n"
+        
+        //subtitle second line
+        var subtitleFormatted: String = ""
+        subtitleFormatted = "\(subtitle)"
+        
+        //if present departments header: "Departments:" then bullet points (ex dep1, dep2, dep3)
+        var departmentsFormatted: String = ""
+        if !departments.isEmpty {
+            departmentsFormatted = "\nDepartments:\n -" + departments.stringByReplacingOccurrencesOfString(", ", withString: "\n -", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        }
+        
+        //if present links header: "Links" then links
+        var linksFormatted: String = ""
+        if !links.isEmpty {
+            linksFormatted = "\nLinks:\n " + links.stringByReplacingOccurrencesOfString(", ", withString: "\n ", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        }
+        
+        return addressFormatted + subtitleFormatted + departmentsFormatted + linksFormatted
+    }
+    
+    //get height for description label
+    func heightForView(text:String, font:UIFont?, width:CGFloat?) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width!, CGFloat.max))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = font
+        label.text = text
+        
+        label.sizeToFit()
+        return label.frame.height
+    }
+    
+    //used for custom callout view when view is deselect
+    // needs to hid custom calloutview
+    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKAnnotationView!) {
+        if let buildingAnnotationView = view as? BuildingAnnotationView {
+            println("Annotation Deselected")
+            for object in buildingAnnotationView.subviews {
+                if let subview = object as? CustomCalloutView {
+                    subview.removeFromSuperview()
+                }
+            }
+
+        }
+    }
+    
+    
+    //util
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        
+        if (cString.hasPrefix("#")) {
+            cString = cString.substringFromIndex(advance(cString.startIndex, 1))
+        }
+        
+        if (count(cString) != 6) {
+            return UIColor.grayColor()
+        }
+        
+        var rgbValue:UInt32 = 0
+        NSScanner(string: cString).scanHexInt(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
 }
 
 

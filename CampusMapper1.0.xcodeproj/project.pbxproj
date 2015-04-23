@@ -8,11 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */; };
+		1C78AF611AE031EF00F4A9E8 /* BuildingAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C78AF601AE031EF00F4A9E8 /* BuildingAnnotation.swift */; };
+		1C78AF631AE0350F00F4A9E8 /* BuildingAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C78AF621AE0350F00F4A9E8 /* BuildingAnnotationView.swift */; };
 		1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */; };
 		1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */; };
 		1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */; };
 		1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D06111ACCD629000F674B /* CampusCoords.plist */; };
 		1C8D06141ACCD755000F674B /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D06131ACCD755000F674B /* Campus.swift */; };
+		1C8D40871AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40861AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist */; };
+		1C8D40891AE707BD0012A0E1 /* Sheehan Hall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40881AE707BD0012A0E1 /* Sheehan Hall.png */; };
+		1C8D408C1AE70C220012A0E1 /* black128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D408B1AE70C210012A0E1 /* black128x128.png */; };
+		1C8D40901AE70CF10012A0E1 /* trans128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D408F1AE70CF10012A0E1 /* trans128x128.png */; };
+		1C8D40921AE7125A0012A0E1 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8D40911AE7125A0012A0E1 /* CustomCalloutView.swift */; };
+		1C8D40941AE719700012A0E1 /* 40x40.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40931AE719700012A0E1 /* 40x40.gif */; };
+		1C8D409F1AE891B00012A0E1 /* TauCenter_exterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40951AE891B00012A0E1 /* TauCenter_exterior.jpg */; };
+		1C8D40A01AE891B00012A0E1 /* Lourdes_exterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */; };
+		1C8D40A11AE891B00012A0E1 /* Watkins Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40971AE891B00012A0E1 /* Watkins Hall.jpg */; };
+		1C8D40A21AE891B00012A0E1 /* Kryzsko Commons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40981AE891B00012A0E1 /* Kryzsko Commons.jpg */; };
+		1C8D40A31AE891B00012A0E1 /* Darrel W Krueger Library.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40991AE891B00012A0E1 /* Darrel W Krueger Library.jpg */; };
+		1C8D40A41AE891B00012A0E1 /* Science Laboratory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D409A1AE891B00012A0E1 /* Science Laboratory Center.jpg */; };
+		1C8D40A51AE891B00012A0E1 /* Somsen Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D409B1AE891B00012A0E1 /* Somsen Hall.jpg */; };
+		1C8D40A61AE891B00012A0E1 /* Performing Arts Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D409C1AE891B00012A0E1 /* Performing Arts Center.jpg */; };
+		1C8D40A71AE891B00012A0E1 /* Conway Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D409D1AE891B00012A0E1 /* Conway Hall.jpg */; };
+		1C8D40A81AE891B00012A0E1 /* Richards Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D409E1AE891B00012A0E1 /* Richards Hall.jpg */; };
 		1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */; };
 		1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */; };
 		1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */; };
@@ -36,11 +54,29 @@
 
 /* Begin PBXFileReference section */
 		1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapsLatLongOverlay3.png; sourceTree = "<group>"; };
+		1C78AF601AE031EF00F4A9E8 /* BuildingAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuildingAnnotation.swift; path = ../BuildingAnnotation.swift; sourceTree = "<group>"; };
+		1C78AF621AE0350F00F4A9E8 /* BuildingAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingAnnotationView.swift; sourceTree = "<group>"; };
 		1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = campusTestOverlay.png; sourceTree = "<group>"; };
 		1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlay.swift; sourceTree = "<group>"; };
 		1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountainAttractions.plist; sourceTree = "<group>"; };
 		1C8D06111ACCD629000F674B /* CampusCoords.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusCoords.plist; sourceTree = "<group>"; };
 		1C8D06131ACCD755000F674B /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		1C8D40861AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CampusCoordsBuildings.plist; sourceTree = "<group>"; };
+		1C8D40881AE707BD0012A0E1 /* Sheehan Hall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sheehan Hall.png"; sourceTree = "<group>"; };
+		1C8D408B1AE70C210012A0E1 /* black128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black128x128.png; sourceTree = "<group>"; };
+		1C8D408F1AE70CF10012A0E1 /* trans128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trans128x128.png; sourceTree = "<group>"; };
+		1C8D40911AE7125A0012A0E1 /* CustomCalloutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
+		1C8D40931AE719700012A0E1 /* 40x40.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 40x40.gif; sourceTree = "<group>"; };
+		1C8D40951AE891B00012A0E1 /* TauCenter_exterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TauCenter_exterior.jpg; sourceTree = "<group>"; };
+		1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lourdes_exterior.jpg; sourceTree = "<group>"; };
+		1C8D40971AE891B00012A0E1 /* Watkins Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Watkins Hall.jpg"; sourceTree = "<group>"; };
+		1C8D40981AE891B00012A0E1 /* Kryzsko Commons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kryzsko Commons.jpg"; sourceTree = "<group>"; };
+		1C8D40991AE891B00012A0E1 /* Darrel W Krueger Library.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Darrel W Krueger Library.jpg"; sourceTree = "<group>"; };
+		1C8D409A1AE891B00012A0E1 /* Science Laboratory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Science Laboratory Center.jpg"; sourceTree = "<group>"; };
+		1C8D409B1AE891B00012A0E1 /* Somsen Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Somsen Hall.jpg"; sourceTree = "<group>"; };
+		1C8D409C1AE891B00012A0E1 /* Performing Arts Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Performing Arts Center.jpg"; sourceTree = "<group>"; };
+		1C8D409D1AE891B00012A0E1 /* Conway Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Conway Hall.jpg"; sourceTree = "<group>"; };
+		1C8D409E1AE891B00012A0E1 /* Richards Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Richards Hall.jpg"; sourceTree = "<group>"; };
 		1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlayView.swift; sourceTree = "<group>"; };
 		1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_park.png; sourceTree = "<group>"; };
 		1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
@@ -74,6 +110,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C8D408A1AE707CB0012A0E1 /* buildingImages */ = {
+			isa = PBXGroup;
+			children = (
+				1C8D40951AE891B00012A0E1 /* TauCenter_exterior.jpg */,
+				1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */,
+				1C8D40971AE891B00012A0E1 /* Watkins Hall.jpg */,
+				1C8D40981AE891B00012A0E1 /* Kryzsko Commons.jpg */,
+				1C8D40991AE891B00012A0E1 /* Darrel W Krueger Library.jpg */,
+				1C8D409A1AE891B00012A0E1 /* Science Laboratory Center.jpg */,
+				1C8D409B1AE891B00012A0E1 /* Somsen Hall.jpg */,
+				1C8D409C1AE891B00012A0E1 /* Performing Arts Center.jpg */,
+				1C8D409D1AE891B00012A0E1 /* Conway Hall.jpg */,
+				1C8D409E1AE891B00012A0E1 /* Richards Hall.jpg */,
+				1C8D40931AE719700012A0E1 /* 40x40.gif */,
+				1C8D408F1AE70CF10012A0E1 /* trans128x128.png */,
+				1C8D408B1AE70C210012A0E1 /* black128x128.png */,
+				1C8D40881AE707BD0012A0E1 /* Sheehan Hall.png */,
+			);
+			name = buildingImages;
+			sourceTree = "<group>";
+		};
 		570E48E21AC8D55F004DC3EA = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +152,11 @@
 		570E48ED1AC8D55F004DC3EA /* CampusMapper1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				570E48F21AC8D560004DC3EA /* ViewController.swift */,
 				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
+				570E48F21AC8D560004DC3EA /* ViewController.swift */,
+				1C78AF621AE0350F00F4A9E8 /* BuildingAnnotationView.swift */,
+				1C8D40911AE7125A0012A0E1 /* CustomCalloutView.swift */,
+				1C78AF601AE031EF00F4A9E8 /* BuildingAnnotation.swift */,
 				1C8D06131ACCD755000F674B /* Campus.swift */,
 				1C8D060D1ACCD3BB000F674B /* CampusOverlay.swift */,
 				1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */,
@@ -108,16 +168,18 @@
 		570E48EE1AC8D560004DC3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */,
-				1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */,
-				1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */,
-				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
-				570E48F71AC8D560004DC3EA /* Images.xcassets */,
-				575579111ACB616E002AE6ED /* search.png */,
-				1C8D06111ACCD629000F674B /* CampusCoords.plist */,
-				1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */,
+				1C8D408A1AE707CB0012A0E1 /* buildingImages */,
 				1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */,
+				1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */,
+				1C8D06111ACCD629000F674B /* CampusCoords.plist */,
+				1C8D40861AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist */,
+				570E48F71AC8D560004DC3EA /* Images.xcassets */,
+				1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */,
+				1C8D060F1ACCD5D5000F674B /* MagicMountainAttractions.plist */,
+				1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */,
 				570E48EF1AC8D560004DC3EA /* Info.plist */,
+				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
+				575579111ACB616E002AE6ED /* search.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,14 +282,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
+				1C8D40A51AE891B00012A0E1 /* Somsen Hall.jpg in Resources */,
 				1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */,
+				1C8D40A01AE891B00012A0E1 /* Lourdes_exterior.jpg in Resources */,
 				1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */,
+				1C8D40A31AE891B00012A0E1 /* Darrel W Krueger Library.jpg in Resources */,
+				1C8D40891AE707BD0012A0E1 /* Sheehan Hall.png in Resources */,
+				1C8D40A41AE891B00012A0E1 /* Science Laboratory Center.jpg in Resources */,
+				1C8D40A61AE891B00012A0E1 /* Performing Arts Center.jpg in Resources */,
 				575579121ACB616E002AE6ED /* search.png in Resources */,
 				1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */,
+				1C8D40A81AE891B00012A0E1 /* Richards Hall.jpg in Resources */,
+				1C8D408C1AE70C220012A0E1 /* black128x128.png in Resources */,
+				1C8D409F1AE891B00012A0E1 /* TauCenter_exterior.jpg in Resources */,
+				1C8D40941AE719700012A0E1 /* 40x40.gif in Resources */,
+				1C8D40901AE70CF10012A0E1 /* trans128x128.png in Resources */,
+				1C8D40A21AE891B00012A0E1 /* Kryzsko Commons.jpg in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 				1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */,
 				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
+				1C8D40A11AE891B00012A0E1 /* Watkins Hall.jpg in Resources */,
 				1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */,
+				1C8D40A71AE891B00012A0E1 /* Conway Hall.jpg in Resources */,
+				1C8D40871AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +324,10 @@
 			files = (
 				1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */,
 				1C8D06141ACCD755000F674B /* Campus.swift in Sources */,
+				1C78AF611AE031EF00F4A9E8 /* BuildingAnnotation.swift in Sources */,
 				570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */,
+				1C78AF631AE0350F00F4A9E8 /* BuildingAnnotationView.swift in Sources */,
+				1C8D40921AE7125A0012A0E1 /* CustomCalloutView.swift in Sources */,
 				570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */,
 				1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */,
 			);
