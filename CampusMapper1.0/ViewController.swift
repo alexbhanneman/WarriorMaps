@@ -266,7 +266,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         //image
         var imageView: UIImageView = UIImageView(image: UIImage(named: "\(buildAnno.title).jpg"))
-        imageView.frame = CGRectMake(0, 35, calloutView.frame.width, 100)
+        imageView.frame = CGRectMake(0, 35, 300, 100)
         calloutView.addSubview(imageView)
         
         //description
@@ -283,7 +283,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     func formatLabelString(address: String, subtitle: String, departments: String, links: String) -> String {
-        println("\(address) \n\(subtitle) \n\(departments) \n\(links)")
         
         //address first line
         var addressFormatted: String = ""
