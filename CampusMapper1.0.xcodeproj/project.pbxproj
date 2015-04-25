@@ -51,6 +51,9 @@
 		1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */; };
 		1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */; };
 		1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */; };
+		1CE496E81AEB08BC006AA98F /* trangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE496E71AEB08BC006AA98F /* trangle.png */; };
+		1CE496EA1AEB0D60006AA98F /* triangle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE496E91AEB0D60006AA98F /* triangle2.png */; };
+		1CE496EC1AEB11D9006AA98F /* Gazebo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1CE496EB1AEB11D9006AA98F /* Gazebo.jpg */; };
 		570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F01AC8D560004DC3EA /* AppDelegate.swift */; };
 		570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F21AC8D560004DC3EA /* ViewController.swift */; };
 		570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F71AC8D560004DC3EA /* Images.xcassets */; };
@@ -114,6 +117,9 @@
 		1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlayView.swift; sourceTree = "<group>"; };
 		1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_park.png; sourceTree = "<group>"; };
 		1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MagicMountain.plist; sourceTree = "<group>"; };
+		1CE496E71AEB08BC006AA98F /* trangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trangle.png; sourceTree = "<group>"; };
+		1CE496E91AEB0D60006AA98F /* triangle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle2.png; sourceTree = "<group>"; };
+		1CE496EB1AEB11D9006AA98F /* Gazebo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Gazebo.jpg; sourceTree = "<group>"; };
 		570E48EB1AC8D55F004DC3EA /* CampusMapper1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusMapper1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570E48EF1AC8D560004DC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570E48F01AC8D560004DC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +153,8 @@
 		1C8D408A1AE707CB0012A0E1 /* otherImages */ = {
 			isa = PBXGroup;
 			children = (
+				1CE496E91AEB0D60006AA98F /* triangle2.png */,
+				1CE496E71AEB08BC006AA98F /* trangle.png */,
 				1C8D40951AE891B00012A0E1 /* TauCenter_exterior.jpg */,
 				1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */,
 				1C8D40931AE719700012A0E1 /* 40x40.gif */,
@@ -159,6 +167,7 @@
 		1C8D40D71AE9C75E0012A0E1 /* buildingImages */ = {
 			isa = PBXGroup;
 			children = (
+				1CE496EB1AEB11D9006AA98F /* Gazebo.jpg */,
 				1C8D410A1AE9F6F80012A0E1 /* College Center.jpg */,
 				1C8D410B1AE9F6F80012A0E1 /* Kryzsko Commons.jpg */,
 				1C8D41061AE9F5F10012A0E1 /* Kirkland Hall.jpg */,
@@ -341,9 +350,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C8D40FF1AE9EC9D0012A0E1 /* Sheenhan Hall.jpg in Resources */,
+				1CE496E81AEB08BC006AA98F /* trangle.png in Resources */,
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
 				1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */,
 				1C8D40A01AE891B00012A0E1 /* Lourdes_exterior.jpg in Resources */,
+				1CE496EC1AEB11D9006AA98F /* Gazebo.jpg in Resources */,
 				1C8D40FD1AE9EA370012A0E1 /* Security Office.jpg in Resources */,
 				1C8D40F51AE9E4EE0012A0E1 /* Lucas Hall.jpg in Resources */,
 				1C8D40E51AE9DA140012A0E1 /* Shepard Hall.jpg in Resources */,
@@ -371,6 +382,7 @@
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 				1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */,
 				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
+				1CE496EA1AEB0D60006AA98F /* triangle2.png in Resources */,
 				1C8D40F31AE9E3CB0012A0E1 /* Prentiss Hall.jpg in Resources */,
 				1C8D40E71AE9DB7B0012A0E1 /* Watkins Hall.jpg in Resources */,
 				1C8D40E11AE9D8B70012A0E1 /* Science Laboratory Center.jpg in Resources */,

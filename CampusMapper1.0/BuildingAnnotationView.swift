@@ -40,10 +40,8 @@ class BuildingAnnotationView: MKAnnotationView {
     
     override init(annotation: MKAnnotation, reuseIdentifier: String) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        //let buildingAnnotation = self.annotation as! BuildingAnnotation
-        //TODO: customize annotation view
+        let buildingAnnotation = self.annotation as! BuildingAnnotation
         self.image = UIImage(named: "trans128x128.png")//todo temp, need to facilitate every building?
-        //self.leftCalloutAccessoryView = UIImageView(image: UIImage(named: "40x40.gif"))
         self.canShowCallout = false;
     }
     

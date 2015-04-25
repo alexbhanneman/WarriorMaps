@@ -230,93 +230,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //needs to show custom calloutView
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
         if let buildingAnnotationView = view as? BuildingAnnotationView {
-            updateCalloutLocation(buildingAnnotationView)
+            //updateCalloutLocation(buildingAnnotationView)
+            var calloutView: CustomCalloutView = CustomCalloutView(buildingAnnotationView: buildingAnnotationView)
+            buildingAnnotationView.addSubview(calloutView)
         }
-    }
-    
-    
-    func updateCalloutLocation(buildingAnnotationView: BuildingAnnotationView) {
-        var buildAnno = buildingAnnotationView.annotation as! BuildingAnnotation
-        var formattedText: String = formatLabelString(buildAnno.address, subtitle: buildAnno.subtitle, departments: buildAnno.departments, links: buildAnno.links)
-        let font = UIFont(name: "Helvetica", size: 14.0)
-        let height = heightForView(formattedText, font: font, width: 300-20)
-        
-        println("height: \(height)")
-        //need to add callout to view based on location
-        println("Callout Added..")
-        var calloutSize: CGSize = CGSizeMake(300.0, 30+90+20+height)
-        var calloutOffset: CGPoint = buildingAnnotationView.calloutOffset
-        var centerOffset = buildingAnnotationView.centerOffset
-        var calloutView: CustomCalloutView = CustomCalloutView(frame: CGRectMake(calloutOffset.x, calloutOffset.y, calloutSize.width, calloutSize.height))
-        
-        calloutView.backgroundColor = UIColor.lightGrayColor()
-        calloutView.layer.borderColor = UIColor.whiteColor().CGColor
-        calloutView.layer.borderWidth = 6.0
-        calloutView.layer.cornerRadius = 8.0
-        calloutView.clipsToBounds = true
-//TODO: after working add these all to CustomCalloutView
-        
-        //title
-        var title: UILabel = UILabel(frame: CGRectMake(0, 5, calloutView.frame.width, 30))
-        title.backgroundColor = hexStringToUIColor("#4f109b")
-        title.textColor = UIColor.whiteColor()
-        title.text = buildingAnnotationView.annotation.title
-        title.textAlignment = NSTextAlignment.Center
-        calloutView.addSubview(title)
-        
-        //image
-        var imageView: UIImageView = UIImageView(image: UIImage(named: "\(buildAnno.title).jpg"))
-        imageView.frame = CGRectMake(0, 35, 300, 100)
-        calloutView.addSubview(imageView)
-        
-        //description
-        var subtitle: UILabel = UILabel(frame: CGRectMake(10, 35+100, calloutView.frame.width-20, height)) //height based off
-        subtitle.backgroundColor = UIColor.lightGrayColor()
-        subtitle.textColor = UIColor.blackColor()
-        subtitle.text = formattedText
-        subtitle.textAlignment = NSTextAlignment.Left
-        subtitle.numberOfLines = 0
-        subtitle.font = font
-        calloutView.addSubview(subtitle)
-        
-        buildingAnnotationView.addSubview(calloutView)
-    }
-    
-    func formatLabelString(address: String, subtitle: String, departments: String, links: String) -> String {
-        
-        //address first line
-        var addressFormatted: String = ""
-        addressFormatted = "\(address)\n"
-        
-        //subtitle second line
-        var subtitleFormatted: String = ""
-        subtitleFormatted = "\(subtitle)"
-        
-        //if present departments header: "Departments:" then bullet points (ex dep1, dep2, dep3)
-        var departmentsFormatted: String = ""
-        if !departments.isEmpty {
-            departmentsFormatted = "\nDepartments:\n -" + departments.stringByReplacingOccurrencesOfString(", ", withString: "\n -", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        }
-        
-        //if present links header: "Links" then links
-        var linksFormatted: String = ""
-        if !links.isEmpty {
-            linksFormatted = "\nLinks:\n " + links.stringByReplacingOccurrencesOfString(", ", withString: "\n ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        }
-        
-        return addressFormatted + subtitleFormatted + departmentsFormatted + linksFormatted
-    }
-    
-    //get height for description label
-    func heightForView(text:String, font:UIFont?, width:CGFloat?) -> CGFloat{
-        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width!, CGFloat.max))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        label.font = font
-        label.text = text
-        
-        label.sizeToFit()
-        return label.frame.height
     }
     
     //used for custom callout view when view is deselect
@@ -331,30 +248,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             }
 
         }
-    }
-    
-    
-    //util
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
-        
-        if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(advance(cString.startIndex, 1))
-        }
-        
-        if (count(cString) != 6) {
-            return UIColor.grayColor()
-        }
-        
-        var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
-        
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
     }
     
 }
