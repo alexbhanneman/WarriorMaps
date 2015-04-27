@@ -69,7 +69,6 @@ class BuildingAnnotationView: MKAnnotationView {
         }
     }
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        println("hitTest \(point)")
         var hitView = super.hitTest(point, withEvent: event)
         
         if let callout = calloutView {

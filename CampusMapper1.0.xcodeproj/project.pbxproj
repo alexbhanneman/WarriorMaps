@@ -227,10 +227,9 @@
 		570E48ED1AC8D55F004DC3EA /* CampusMapper1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
 				57CA0B4C1AE9B3B200657C3E /* ThirdViewController.swift */,
 				576F03C31AE6E02D007A4F6B /* SecondaryViewController.swift */,
-				570E48F21AC8D560004DC3EA /* ViewController.swift */,
-				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
 				570E48F21AC8D560004DC3EA /* ViewController.swift */,
 				1C78AF621AE0350F00F4A9E8 /* BuildingAnnotationView.swift */,
 				1C8D40911AE7125A0012A0E1 /* CustomCalloutView.swift */,
@@ -246,6 +245,9 @@
 		570E48EE1AC8D560004DC3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+                1C8D40D71AE9C75E0012A0E1 /* buildingImages */,
+                1C8D408A1AE707CB0012A0E1 /* otherImages */,
+                1C8D060B1ACCCE9F000F674B /* campusTestOverlay.png */,
 				5763AC4F1AE9F89B00EF5561 /* close.png */,
 				57CA0B4E1AE9B94F00657C3E /* direct.gif */,
 				1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */,
@@ -426,6 +428,8 @@
 				1C8D06141ACCD755000F674B /* Campus.swift in Sources */,
 				1C78AF611AE031EF00F4A9E8 /* BuildingAnnotation.swift in Sources */,
 				570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */,
+                1C78AF631AE0350F00F4A9E8 /* BuildingAnnotationView.swift in Sources */,
+                1C8D40921AE7125A0012A0E1 /* CustomCalloutView.swift in Sources */,
 				57CA0B4D1AE9B3B200657C3E /* ThirdViewController.swift in Sources */,
 				570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */,
 				1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */,

@@ -80,9 +80,6 @@ class CustomCalloutView: UIView {
         let isInsideView = pointInside(viewPoint, withEvent: event)
         
         var view = super.hitTest(viewPoint, withEvent: event)
-        
-        //view = UIImageView(image: UIImage(named: "Sheehan.png"))
-        
 
         return view
     }

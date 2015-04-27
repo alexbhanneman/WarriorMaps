@@ -457,10 +457,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             //if annotation is not an MKPointAnnotation (eg. MKUserLocation),
             //return nil so map draws default view for it (eg. blue dot)...
             return nil
-        }else {
+        }else if (annotation is BuildingAnnotation){
+            println("building anno view")
             let annotationView = BuildingAnnotationView(annotation: annotation, reuseIdentifier: "Campus Building")
             //annotationView.canShowCallout = true
             return annotationView
+        }else {
+            return nil
         }
     }
     
@@ -486,7 +489,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     //used for custom Callout view when view is selected
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
         if let buildingAnnotationView = view as? BuildingAnnotationView {
-            //updateCalloutLocation(buildingAnnotationView)
+            println("Annotation Selected")
             var calloutView: CustomCalloutView = CustomCalloutView(buildingAnnotationView: buildingAnnotationView)
             buildingAnnotationView.addSubview(calloutView)
         }
