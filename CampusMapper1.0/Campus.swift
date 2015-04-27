@@ -56,8 +56,7 @@ class Campus {
         midCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(midPoint.x), CLLocationDegrees(midPoint.y))
         
         let overlayTopLeftPoint = CGPointFromString(properties!["overlayTopLeftCoord"]as! String)
-        overlayTopLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopLeftPoint.x),
-            CLLocationDegrees(overlayTopLeftPoint.y))
+        overlayTopLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopLeftPoint.x),CLLocationDegrees(overlayTopLeftPoint.y))
         
         let overlayTopRightPoint = CGPointFromString(properties!["overlayTopRightCoord"] as! String)
         overlayTopRightCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayTopRightPoint.x),

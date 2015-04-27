@@ -22,6 +22,10 @@
 		570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F91AC8D560004DC3EA /* LaunchScreen.xib */; };
 		570E49071AC8D560004DC3EA /* CampusMapper1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E49061AC8D560004DC3EA /* CampusMapper1_0Tests.swift */; };
 		575579121ACB616E002AE6ED /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 575579111ACB616E002AE6ED /* search.png */; };
+		5763AC501AE9F89B00EF5561 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5763AC4F1AE9F89B00EF5561 /* close.png */; };
+		576F03C41AE6E02D007A4F6B /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576F03C31AE6E02D007A4F6B /* SecondaryViewController.swift */; };
+		57CA0B4D1AE9B3B200657C3E /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CA0B4C1AE9B3B200657C3E /* ThirdViewController.swift */; };
+		57CA0B4F1AE9B94F00657C3E /* direct.gif in Resources */ = {isa = PBXBuildFile; fileRef = 57CA0B4E1AE9B94F00657C3E /* direct.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,10 @@
 		570E49051AC8D560004DC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570E49061AC8D560004DC3EA /* CampusMapper1_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMapper1_0Tests.swift; sourceTree = "<group>"; };
 		575579111ACB616E002AE6ED /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		5763AC4F1AE9F89B00EF5561 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		576F03C31AE6E02D007A4F6B /* SecondaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
+		57CA0B4C1AE9B3B200657C3E /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThirdViewController.swift; path = ../ThirdViewController.swift; sourceTree = "<group>"; };
+		57CA0B4E1AE9B94F00657C3E /* direct.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = direct.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,8 @@
 		570E48ED1AC8D55F004DC3EA /* CampusMapper1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				57CA0B4C1AE9B3B200657C3E /* ThirdViewController.swift */,
+				576F03C31AE6E02D007A4F6B /* SecondaryViewController.swift */,
 				570E48F21AC8D560004DC3EA /* ViewController.swift */,
 				570E48F01AC8D560004DC3EA /* AppDelegate.swift */,
 				1C8D06131ACCD755000F674B /* Campus.swift */,
@@ -108,6 +118,8 @@
 		570E48EE1AC8D560004DC3EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5763AC4F1AE9F89B00EF5561 /* close.png */,
+				57CA0B4E1AE9B94F00657C3E /* direct.gif */,
 				1C53B6BD1AD8E61100B74C57 /* mapsLatLongOverlay3.png */,
 				1CD66F4C1ACCEFEB00DC6B5D /* MagicMountain.plist */,
 				1CD66F4A1ACCE3D600DC6B5D /* overlay_park.png */,
@@ -220,12 +232,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
+				5763AC501AE9F89B00EF5561 /* close.png in Resources */,
 				1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */,
 				1CD66F4D1ACCEFEB00DC6B5D /* MagicMountain.plist in Resources */,
 				575579121ACB616E002AE6ED /* search.png in Resources */,
 				1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 				1C8D06101ACCD5D5000F674B /* MagicMountainAttractions.plist in Resources */,
+				57CA0B4F1AE9B94F00657C3E /* direct.gif in Resources */,
 				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
 				1CD66F4B1ACCE3D600DC6B5D /* overlay_park.png in Resources */,
 			);
@@ -248,8 +262,10 @@
 				1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */,
 				1C8D06141ACCD755000F674B /* Campus.swift in Sources */,
 				570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */,
+				57CA0B4D1AE9B3B200657C3E /* ThirdViewController.swift in Sources */,
 				570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */,
 				1C8D060E1ACCD3BB000F674B /* CampusOverlay.swift in Sources */,
+				576F03C41AE6E02D007A4F6B /* SecondaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

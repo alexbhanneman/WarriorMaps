@@ -9,22 +9,27 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Foundation
 
-let HOME = "Home"
 let METERS_PER_MILE = 1609.344
 
 class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate{
     
     let manager = CLLocationManager()
     let map = MKMapView()
+    var annotations: [MKPointAnnotation] = [MKPointAnnotation]()
     var location: CLLocationCoordinate2D
-    var matchingItems: [MKMapItem] = [MKMapItem]()
     var locationManager = CLLocationManager()
-    
+    var matchingItems: [MKMapItem] = [MKMapItem]()
     let searchIcon: UIImageView = UIImageView(image: UIImage(named: "search.png"))
+    let directIcon: UIImageView = UIImageView(image: UIImage(named: "direct.gif"))
     var searchText: UITextField = UITextField(frame:CGRectMake(60, -100, 400, 50))
-    
+    var directText: UITextField = UITextField(frame:CGRectMake(60, -100, 400, 50))
+    var result: UILabel = UILabel(frame: CGRectMake(0, 0,  UIScreen.mainScreen().bounds.width,  UIScreen.mainScreen().bounds.height))
+    var directionsRoute: MKOverlay?
     var campus: Campus
+    private var scrollView = UIScrollView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-300, UIScreen.mainScreen().bounds.height-200, 300, 200))
+    var scrolls = [UILabel]()
     
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -48,14 +53,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         map.region = MKCoordinateRegionMakeWithDistance(location, METERS_PER_MILE, METERS_PER_MILE)
         self.view = map
         
-        //SEARCH BAR
+        //NAV BAR
         searchIcon.frame = CGRectMake(10,20,50,50)
-        searchIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "animate"))
+        searchIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "animateSearch"))
         searchIcon.userInteractionEnabled = true
         searchIcon.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(searchIcon)
         
-        searchText.placeholder = "Search For a Place"
+        directIcon.frame = CGRectMake(10,80,50,50)
+        directIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "animateDirect"))
+        directIcon.userInteractionEnabled = true
+        directIcon.backgroundColor = UIColor.whiteColor()
+        self.view.addSubview(directIcon)
+        
+        
+        searchText.placeholder = "Search For Places Around Winona"
         searchText.backgroundColor = UIColor.whiteColor()
         searchText.borderStyle = UITextBorderStyle.Bezel
         searchText.keyboardType = UIKeyboardType.Default
@@ -63,19 +75,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         searchText.clearButtonMode = UITextFieldViewMode.Always
         searchText.delegate = self
         
+        directText.placeholder = "Find Directions to a Place Around Winona"
+        directText.backgroundColor = UIColor.whiteColor()
+        directText.borderStyle = UITextBorderStyle.Bezel
+        directText.keyboardType = UIKeyboardType.Default
+        directText.returnKeyType = UIReturnKeyType.Search
+        directText.clearButtonMode = UITextFieldViewMode.Always
+        directText.delegate = self
         
         // SHOW CURRENT USER LOCATION
         map.showsUserLocation = true
-        
-        
-        //USER LOCATION AS PIN
-//        locationManager = CLLocationManager()
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-        
-        
         
         //add overlay
         addOverLay()
@@ -88,33 +97,40 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if searchText == textField {
             searchText.resignFirstResponder()
-            performSearch()
+            performSearch(searchText)
             searchText.text = ""
             self.view.addSubview(searchText)
+        }
+        if directText == textField {
+            directText.resignFirstResponder()
+            performSearch(directText)
+            directText.text = ""
+            self.view.addSubview(directText)
         }
         return false
     }
     
-    func animate(){
+    func animateSearch(){
         let yPosition = self.searchText.frame.origin.y
 
-        if (yPosition == -100)  //if search bar is collapsed then expand it
+        if (yPosition == -100)  //search bar appear
         {
             UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
-                self.searchIcon.removeFromSuperview()   //needed so searchIcon stays above searchText
-                self.view.addSubview(self.searchIcon)
                 self.searchText.frame = CGRectMake(60,20,400,50)
                 self.view.addSubview(self.searchText)
                 },
                 completion: { (complete BOOL) in
-                    
+            })
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.directText.frame = CGRectMake(60,-100,400,50)
+                },
+                completion: { (complete BOOL) in
+                    self.directText.removeFromSuperview()
             })
         }
-        else    //search bar is expanded, collapse it
+        else    //search bar disappear
         {
             UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
-                self.searchIcon.removeFromSuperview() //needed so searchIcon stays above searchText
-                self.view.addSubview(self.searchIcon)
                 self.searchText.frame = CGRectMake(60,-100,400,50)
                 },
                 completion: { (complete BOOL) in
@@ -123,10 +139,74 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
-    func performSearch() {
-        matchingItems.removeAll()
+    func animateDirect(){
+        let yPosition = self.directText.frame.origin.y
+        
+        if (yPosition == -100)  //make direct bar appear
+        {
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.directText.frame = CGRectMake(60,80,400,50)
+                self.view.addSubview(self.directText)
+                },
+                completion: { (complete BOOL) in
+            })
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.searchText.frame = CGRectMake(60,-100,400,50)
+                },
+                completion: { (complete BOOL) in
+                    self.searchText.removeFromSuperview()
+            })
+        }
+        else    //direct bar is here, make it disappear
+        {
+            UIView.animateWithDuration(1.0, delay: 0.0, options: nil, animations: {
+                self.directText.frame = CGRectMake(60,-100,400,50)
+                },
+                completion: { (complete BOOL) in
+                    self.directText.removeFromSuperview()
+            })
+        }
+    }
+    
+    func findAddress(item: MKMapItem, completionHandler: (str: String, error: NSError?) -> ()) -> Void{
+        var lat:CLLocationDegrees
+        var long:CLLocationDegrees
+        var location = CLLocation(latitude: item.placemark.coordinate.latitude, longitude: item.placemark.coordinate.longitude)
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks: [AnyObject]!, error: NSError!) in
+            
+            var str: String
+            if error != nil {
+                //Alert here that a location needs to be selected
+                completionHandler(str: "", error: nil)
+            }
+            if placemarks.count > 0 {
+                let pm = placemarks[0] as! CLPlacemark
+                str = String(pm.name + ", " + pm.locality)
+                completionHandler(str: str, error: nil)
+            }
+                
+            else {
+                println("Problem with the data received from geocoder")
+                completionHandler(str: "", error: nil)
+            }
+        }
+    }
+
+    
+    func performSearch(searchField: UITextField) {
+        //Remove annotations from map
+        self.removeAnnotations()
+        map.removeOverlay(directionsRoute)
+        self.matchingItems.removeAll()
+        for i in scrolls{
+            i.removeFromSuperview()
+        }
+        scrollView.removeFromSuperview()
+        
+        //Search for location
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = searchText.text
+        request.naturalLanguageQuery = searchField.text
         request.region = self.map.region
         
         let search = MKLocalSearch(request: request)
@@ -142,52 +222,191 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             } else {
                 println("Matches found")
                 
-                for item in response.mapItems as! [MKMapItem] {
-                    println("Name = \(item.name)")
-                    println("Phone = \(item.phoneNumber)")
-                    
+                for item in response.mapItems as! [MKMapItem] {                    
                     self.matchingItems.append(item as MKMapItem)
-                    println("Matching items = \(self.matchingItems.count)")
-                    
-                    var annotation = MKPointAnnotation()
-                    annotation.coordinate = item.placemark.coordinate
-                    annotation.title = item.name + "\n" + item.phoneNumber
-                    self.map.addAnnotation(annotation)
+                }
+                if (searchField == self.searchText){
+                    self.displaySearchResults()
+                }
+                if (searchField == self.directText){
+                    self.displayDirectResults()
                 }
             }
         })
     }
     
-//      THIS IS TO PIN USER'S LOCATION
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//        let location = locations.last as CLLocation
-//        
-//        let point = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-//        
-//        var annotation = MKPointAnnotation()
-//        annotation.coordinate = point
-//        annotation.title = "User Location"
-//        self.map.addAnnotation(annotation)
-//        
-//    }
+    func displaySearchResults(){
+        var mapItems = self.matchingItems
+        var list: SecondaryViewController = SecondaryViewController(mapItems: mapItems,cont: self)
+        list.view.backgroundColor = UIColor.whiteColor()
+        self.presentViewController(list, animated: true) { () -> Void in
+        }
+    }
     
+    func displayDirectResults(){
+        var mapItems = self.matchingItems
+        var list: ThirdViewController = ThirdViewController(mapItems: mapItems,cont: self)
+        list.view.backgroundColor = UIColor.whiteColor()
+        self.presentViewController(list, animated: true) { () -> Void in
+        }
+    }
     
-//      ADJUSTING ANNOTATION COLORS
-//
-//    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKPinAnnotationView!) {
-//        view.pinColor = MKPinAnnotationColor.Purple
-//    }
-//    
-//    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKPinAnnotationView!) {
-//        if view.annotation.title == HOME {
-//            view.pinColor = MKPinAnnotationColor.Green
-//        }
-//        else {
-//            view.pinColor = MKPinAnnotationColor.Red
-//        }
-//    }
+    func didSelect(item: MKMapItem){
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = item.placemark.coordinate
+        annotation.title = item.name
+        
+        findAddress(item) { address, error in
+            if error != nil {
+                annotation.subtitle = ""
+            } else {
+                annotation.subtitle = address
+            }
+        }
+        
+        self.map.addAnnotation(annotation)
+        annotations.append(annotation)
+    }
+    
+    func displayDirections(item: MKMapItem){
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = item.placemark.coordinate
+        annotation.title = item.name
+        
+        findAddress(item) { address, error in
+            if error != nil {
+                annotation.subtitle = ""
+            } else {
+                annotation.subtitle = address
+            }
+        }
+        
+        self.map.addAnnotation(annotation)
+        annotations.append(annotation)
+        
+        //USER DIRECTIONS
+        let request = MKDirectionsRequest()
+        request.setSource(MKMapItem.mapItemForCurrentLocation())
+        request.setDestination(item)
+        request.requestsAlternateRoutes = false
 
-//THIS IS NOT CALLED ???
+        let directions = MKDirections(request: request)
+        
+        directions.calculateDirectionsWithCompletionHandler({(response:
+            MKDirectionsResponse!, error: NSError!) in
+            
+            if error != nil {
+                // Handle error
+            } else {
+                self.showRoute(response)
+            }
+        })
+    }
+    
+    func showRoute(response: MKDirectionsResponse) {
+        var x: CGFloat = 10
+        var y: CGFloat = 10
+        
+        for route in response.routes as! [MKRoute] {
+            map.addOverlay(route.polyline, level: MKOverlayLevel.AboveLabels)
+            var z = 1
+            //DISPLAY DIRECTIONS in SCROLLVIEW
+            var title = UILabel(frame: CGRectMake(x, y, 400, 20))
+            title.font = UIFont(name: "Times", size: 26)
+            title.textAlignment = .Center;
+            title.text = "Directions:"
+            scrollView.addSubview(title)
+            y = y + 40
+            
+            for step in route.steps {
+                var displayDirections = UILabel(frame: CGRectMake(x, y, 400, 20))
+                displayDirections.font = UIFont(name: "Times", size: 18)
+                displayDirections.textAlignment = .Left;
+                displayDirections.text = String(z) + ") " + step.instructions
+                
+                scrollView.addSubview(displayDirections)
+                scrolls.append(displayDirections)
+                y = y+20
+                ++z
+            }
+        }
+        scrollView.frame = CGRectMake(UIScreen.mainScreen().bounds.width-300, UIScreen.mainScreen().bounds.height-y, 300, y)
+        scrollView.backgroundColor = UIColor.whiteColor()
+        scrollView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).CGColor
+        scrollView.layer.borderWidth = 2.0
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: y+40)
+        
+        
+        /*
+            ~ADD DISTANCE TO EACH LABEL WHEN CHOOSING DIRECTIONS TO A PLACE
+            ~GET CLOSE BUTTON WORKING FOR DIRECTIONS SCROLLVIEW
+            ~BE ABLE TO SEARCH CAMPUS BUILDINGS AND GET ROUTES TO THEM
+        */
+        
+        var close: UIImageView = UIImageView(image: UIImage(named: "close.png"))
+        close.frame = CGRectMake(200, 200, scrollView.bounds.width, 0)
+        close.userInteractionEnabled = true
+        close.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "close"))
+        self.view.addSubview(scrollView)
+        scrollView.addSubview(close)
+    }
+    
+    func close(){
+        scrollView.removeFromSuperview()
+    }
+    
+    func resizeMap(){
+        var maxLong = location.longitude
+        var maxLat = location.latitude
+        var minLong = location.longitude
+        var minLat = location.latitude
+        
+        if annotations.count > 0{
+            for i in 1...annotations.count{
+                var tempLong = annotations[i-1].coordinate.longitude
+                var tempLat = annotations[i-1].coordinate.latitude
+                
+                if (tempLong > maxLong){
+                    maxLong = tempLong
+                }
+                if (tempLong < minLong){
+                    minLong = tempLong
+                }
+                if (tempLat > maxLat){
+                    maxLat = tempLat
+                }
+                if (tempLat < maxLat){
+                    maxLat = tempLat
+                }
+            }
+        }
+
+        //Makes sure map region covers all points selected
+        var distance = sqrt(pow((maxLat-minLat),2)+pow((maxLong-minLong),2))*111000.0
+        var mapRegion: Double
+        if (distance > METERS_PER_MILE){
+            mapRegion = distance
+        }
+        else{
+            mapRegion = METERS_PER_MILE
+        }
+        var latCoord = (maxLat+minLat)/2
+        var longCoord = (maxLong+minLong)/2
+        var zoom = CLLocationCoordinate2D(latitude: latCoord, longitude: longCoord)
+        var region = MKCoordinateRegionMakeWithDistance(zoom, mapRegion, mapRegion)
+        self.map.setRegion(region, animated: true)
+        
+    }
+    
+    func removeAnnotations(){
+        if annotations.count > 0{
+            for i in 1...annotations.count{
+                self.map.removeAnnotation(annotations[i-1])
+            }
+            annotations = [MKPointAnnotation]()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -220,9 +439,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let overlayView = CampusMapOverlayView(overlay: overlay, overlayImage: CampusImage!)
             
             return overlayView
-        } 
-        
-        return nil
+        }
+        else{
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            directionsRoute = overlay
+            renderer.strokeColor = UIColor.blueColor()
+            renderer.lineWidth = 5.0
+            return renderer
+        }
     }
 }
 
