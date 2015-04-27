@@ -9,9 +9,6 @@
 import UIKit
 import MapKit
 
-
-//enum BuildingType ?? need this?
-
 class BuildingAnnotation: NSObject, MKAnnotation {
     var coordinate: CLLocationCoordinate2D
     var title: String

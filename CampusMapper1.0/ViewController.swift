@@ -33,6 +33,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let centerY: CGFloat = screenSize.height / 2
         self.location = CLLocationCoordinate2D(latitude: 44.0474, longitude: -91.643284)
         
+        //mapping plist to campus object
         campus = Campus(filename: "CampusCoords")
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -66,16 +67,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         // SHOW CURRENT USER LOCATION
         map.showsUserLocation = true
-        
-        
-        //USER LOCATION AS PIN
-//        locationManager = CLLocationManager()
-//        locationManager.delegate = self
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.startUpdatingLocation()
-        
-        
         
         //add overlay
         addOverLay()
@@ -169,6 +160,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // Dispose of any resources that can be recreated.
     }
 
+    //adds overlay to mapview
     func addOverLay() {
         println("Overlay Called")
         let latDelta = campus.overlayTopLeftCoordinate.latitude -
@@ -208,6 +200,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
     }
     
+    //mapping CampusCoordsBuidlings.plist to BuildingAnnotation.swift and adding each of them to the map
     func addBuildingAnnotations() {
         println("Adding Building Annotations...")
         let filePath = NSBundle.mainBundle().pathForResource("CampusCoordsBuildings", ofType: "plist")
@@ -227,7 +220,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     
     //used for custom Callout view when view is selected
-    //needs to show custom calloutView
     func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
         if let buildingAnnotationView = view as? BuildingAnnotationView {
             //updateCalloutLocation(buildingAnnotationView)
@@ -237,7 +229,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     //used for custom callout view when view is deselect
-    // needs to hid custom calloutview
     func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKAnnotationView!) {
         if let buildingAnnotationView = view as? BuildingAnnotationView {
             println("Annotation Deselected")

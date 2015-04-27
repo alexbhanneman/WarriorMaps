@@ -16,9 +16,6 @@ import Foundation
 import MapKit
 
 class Campus {
-    //var boundary: [CLLocationCoordinate2D]
-    //var boundaryPointsCount: NSInteger
-    
     var midCoordinate: CLLocationCoordinate2D
     var overlayTopLeftCoordinate: CLLocationCoordinate2D
     var overlayTopRightCoordinate: CLLocationCoordinate2D
@@ -48,6 +45,8 @@ class Campus {
     
     var name: String?
     
+    //init w/ filename of plist with data
+    //needs to be a square
     init(filename: String) {
         let filePath = NSBundle.mainBundle().pathForResource(filename, ofType: "plist")
         let properties = NSDictionary(contentsOfFile: filePath!)
@@ -67,17 +66,5 @@ class Campus {
         overlayBottomLeftCoordinate = CLLocationCoordinate2DMake(CLLocationDegrees(overlayBottomLeftPoint.x),
             CLLocationDegrees(overlayBottomLeftPoint.y))
         
-        //for places
-        
-        /*let boundaryPoints = properties!["boundary"] as NSArray
-        
-        boundaryPointsCount = boundaryPoints.count
-        
-        boundary = []
-        
-        for i in 0...boundaryPointsCount-1 {
-            let p = CGPointFromString(boundaryPoints[i] as String)
-            boundary += [CLLocationCoordinate2DMake(CLLocationDegrees(p.x), CLLocationDegrees(p.y))]
-        }*/
     }
 }
