@@ -12,6 +12,7 @@ import MapKit
 class CampusMapOverlayView: MKOverlayRenderer {
     var overlayImage: UIImage
     
+    //inits with image
     init(overlay:MKOverlay, overlayImage:UIImage) {
         self.overlayImage = overlayImage
         super.init(overlay: overlay)

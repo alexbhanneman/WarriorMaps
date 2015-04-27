@@ -38,6 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let centerY: CGFloat = screenSize.height / 2
         self.location = CLLocationCoordinate2D(latitude: 44.0474, longitude: -91.643284)
         
+        //mapping plist to campus object
         campus = Campus(filename: "CampusCoords")
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -88,6 +89,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         //add overlay
         addOverLay()
+        addBuildingAnnotations()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -417,6 +419,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         // Dispose of any resources that can be recreated.
     }
 
+    //adds overlay to mapview
     func addOverLay() {
         println("Overlay Called")
         let latDelta = campus.overlayTopLeftCoordinate.latitude -
@@ -432,7 +435,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         map.addOverlay(overlay)
     }
     
-    //implements MKMapViewDelegate delegate method
+    //implements MKMapViewDelegate delegate method for overlay
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
         if overlay is CampusOverlay {
             let CampusImage = UIImage(named: "mapsLatLongOverlay3.png")
@@ -448,6 +451,60 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             return renderer
         }
     }
+    //implements MKMapViewDelegate delegate method for annotations
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if (annotation is MKUserLocation) {
+            //if annotation is not an MKPointAnnotation (eg. MKUserLocation),
+            //return nil so map draws default view for it (eg. blue dot)...
+            return nil
+        }else {
+            let annotationView = BuildingAnnotationView(annotation: annotation, reuseIdentifier: "Campus Building")
+            //annotationView.canShowCallout = true
+            return annotationView
+        }
+    }
+    
+    //mapping CampusCoordsBuidlings.plist to BuildingAnnotation.swift and adding each of them to the map
+    func addBuildingAnnotations() {
+        println("Adding Building Annotations...")
+        let filePath = NSBundle.mainBundle().pathForResource("CampusCoordsBuildings", ofType: "plist")
+        let buildings = NSArray(contentsOfFile: filePath!)
+        for building in buildings! {
+            let point = CGPointFromString(building["location"] as! String)
+            let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(point.x), CLLocationDegrees(point.y))
+            let title = building["name"] as! String
+            let address = building["address"] as! String
+            let subtitle = building["subtitle"] as! String
+            let departments = building["departments"] as! String
+            let links = building["links"] as! String
+            let buildingAnno = BuildingAnnotation(coordinate: coordinate, title: title, subtitle: subtitle, address: address, departments: departments, links: links)
+            map.addAnnotation(buildingAnno)
+        }
+    }
+    
+    
+    //used for custom Callout view when view is selected
+    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+        if let buildingAnnotationView = view as? BuildingAnnotationView {
+            //updateCalloutLocation(buildingAnnotationView)
+            var calloutView: CustomCalloutView = CustomCalloutView(buildingAnnotationView: buildingAnnotationView)
+            buildingAnnotationView.addSubview(calloutView)
+        }
+    }
+    
+    //used for custom callout view when view is deselect
+    func mapView(mapView: MKMapView!, didDeselectAnnotationView view: MKAnnotationView!) {
+        if let buildingAnnotationView = view as? BuildingAnnotationView {
+            println("Annotation Deselected")
+            for object in buildingAnnotationView.subviews {
+                if let subview = object as? CustomCalloutView {
+                    subview.removeFromSuperview()
+                }
+            }
+
+        }
+    }
+    
 }
 
 

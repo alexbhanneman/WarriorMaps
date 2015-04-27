@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>name</key>
+            <string>Richards Hall</string>
+            <key>location</key>
+            <string>{44.049024, -91.645595}</string>
+            <key>address</key>
+            <string>404 Huff</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/richards.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Morey Hall</string>
+            <key>location</key>
+            <string>{44.048565, -91.645638}</string>
+            <key>address</key>
+            <string>261 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/moreyshepard.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Shepard Hall</string>
+            <key>location</key>
+            <string>{44.048563, -91.645095}</string>
+            <key>address</key>
+            <string>413 Winona</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/moreyshepard.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Conway Hall</string>
+            <key>location</key>
+            <string>{44.048875, -91.644953}</string>
+            <key>address</key>
+            <string>403 Winona</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/conway.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Watkins Hall</string>
+            <key>location</key>
+            <string>{44.048274, -91.644409}</string>
+            <key>address</key>
+            <string>222 W. Howard</string>
+            <key>subtitle</key>
+            <string>Academic, exhibition space</string>
+            <key>departments</key>
+            <string>Computer Science, Liberal Arts</string>
+            <key>links</key>
+            <string>http://www.winona.edu/arts/watkins.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Science Laboratory Center</string>
+            <key>location</key>
+            <string>{44.048758, -91.643969}</string>
+            <key>address</key>
+            <string>400 Winona</string>
+            <key>subtitle</key>
+            <string>Science academic, lab space</string>
+            <key>departments</key>
+            <string>College of Science and Engineering</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Pasteur Hall</string>
+            <key>location</key>
+            <string>{44.048249, -91.643700}</string>
+            <key>address</key>
+            <string>203 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>Science academic, lab space</string>
+            <key>departments</key>
+            <string>College of Science and Engineering, Biology, Chemistry</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Stark Hall</string>
+            <key>location</key>
+            <string>{44.048939, -91.643448}</string>
+            <key>address</key>
+            <string>390 Winona</string>
+            <key>subtitle</key>
+            <string>Nursing, engineering academic, lab space</string>
+            <key>departments</key>
+            <string>College of Nursing, Miller Brothers School of Engineering</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Maxwell Hall</string>
+            <key>location</key>
+            <string>{44.048715, -91.642322}</string>
+            <key>address</key>
+            <string>622 Johnson</string>
+            <key>subtitle</key>
+            <string>Admissions, Maxwell One-Stop, NCPTC</string>
+            <key>departments</key>
+            <string>Admissions, Warrior Hub: Financial Aid</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Main St House</string>
+            <key>location</key>
+            <string>{44.048222, -91.640729}</string>
+            <key>address</key>
+            <string>377 Main</string>
+            <key>subtitle</key>
+            <string>Facilities support services</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/facilities/</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Phelps Hall</string>
+            <key>location</key>
+            <string>{44.047867, -91.642906}</string>
+            <key>address</key>
+            <string>139 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>Liberal arts, academic space</string>
+            <key>departments</key>
+            <string>College of Liberal Arts, Mass Communications, Psychology</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Somsen Hall</string>
+            <key>location</key>
+            <string>{44.047735, -91.642177}</string>
+            <key>address</key>
+            <string>133 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>University administration, academic space</string>
+            <key>departments</key>
+            <string>College of Business, Academic Affairs, Accounting</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Memorial Hall</string>
+            <key>location</key>
+            <string>{44.047354, -91.641377}</string>
+            <key>address</key>
+            <string>131 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>McCown Gymnasium, Talbot Gymnasium, Intramural Office</string>
+            <key>departments</key>
+            <string>Physical Education, Sport Science, Recreation, Tourism</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Lucas Hall</string>
+            <key>location</key>
+            <string>{44.048052, -91.646018}</string>
+            <key>address</key>
+            <string>265 W. King</string>
+            <key>subtitle</key>
+            <string>Female residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Prentiss Hall</string>
+            <key>location</key>
+            <string>{44.047901, -91.645465}</string>
+            <key>address</key>
+            <string>265 W. King</string>
+            <key>subtitle</key>
+            <string>Male residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Gildemeister Hall</string>
+            <key>location</key>
+            <string>{44.047612, -91.644427}</string>
+            <key>address</key>
+            <string>221 W. King</string>
+            <key>subtitle</key>
+            <string>Education, mathematics, academic space</string>
+            <key>departments</key>
+            <string>College of Education, Counseling Education, Mathematics, Statistics</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Gazebo</string>
+            <key>location</key>
+            <string>{44.047624, -91.643668}</string>
+            <key>address</key>
+            <string>175 W Mark St</string>
+            <key>subtitle</key>
+            <string>Center of Campus</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Performing Arts Center</string>
+            <key>location</key>
+            <string>{44.046980, -91.643201}</string>
+            <key>address</key>
+            <string>460 Washington</string>
+            <key>subtitle</key>
+            <string>Performing arts academic, events center</string>
+            <key>departments</key>
+            <string>Open Stage Theatre, Main Stage Threatre</string>
+            <key>links</key>
+            <string>http://www.winona.edu/arts</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Integrated Wellness Complex</string>
+            <key>location</key>
+            <string>{44.046540, -91.641957}</string>
+            <key>address</key>
+            <string>117 W. Sanborn</string>
+            <key>subtitle</key>
+            <string>Student health services, fitness, recreation</string>
+            <key>departments</key>
+            <string>Counseling Services, Student Health Services, Fitness Center</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Kryzsko Commons</string>
+            <key>location</key>
+            <string>{44.047361, -91.645363}</string>
+            <key>address</key>
+            <string>250 W. Howard</string>
+            <key>subtitle</key>
+            <string>Student union and activity center</string>
+            <key>departments</key>
+            <string>Community Liaison, Dining Services, WSU Bookstore</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>College Center</string>
+            <key>location</key>
+            <string>{44.046945, -91.645669}</string>
+            <key>address</key>
+            <string>250 W. Howard</string>
+            <key>subtitle</key>
+            <string>Student Union</string>
+            <key>departments</key>
+            <string>Greek Council, Student Councel Office, UPAC, Student Senate</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Sheenhan Hall</string>
+            <key>location</key>
+            <string>{44.046617, -91.646452}</string>
+            <key>address</key>
+            <string>264 W. Mark</string>
+            <key>subtitle</key>
+            <string>Female residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/sheehan.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Security Office</string>
+            <key>location</key>
+            <string>{44.046725, -91.646425}</string>
+            <key>address</key>
+            <string>264 W. Mark</string>
+            <key>subtitle</key>
+            <string>WSU main security office</string>
+            <key>departments</key>
+            <string>WSU Security</string>
+            <key>links</key>
+            <string>http://www.winona.edu/security/</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Minne Hall</string>
+            <key>location</key>
+            <string>{44.046463, -91.644800}</string>
+            <key>address</key>
+            <string>207 W. Howard</string>
+            <key>subtitle</key>
+            <string>Liberal arts academic space</string>
+            <key>departments</key>
+            <string>College of Liberal Arts, Criminal Justice, English</string>
+            <key>links</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Darrel W Krueger Library</string>
+            <key>location</key>
+            <string>{44.046155, -91.643775}</string>
+            <key>address</key>
+            <string>525 Johnson</string>
+            <key>subtitle</key>
+            <string>Library, art collections</string>
+            <key>departments</key>
+            <string>Student Suport Services</string>
+            <key>links</key>
+            <string>http://www.winona.edu/library/</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>New Center West</string>
+            <key>location</key>
+            <string>{44.046239, -91.646940}</string>
+            <key>address</key>
+            <string>223-263 W. Mark</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/newhall.asp</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Kirkland Hall</string>
+            <key>location</key>
+            <string>{44.045761, -91.645618}</string>
+            <key>address</key>
+            <string>223-263 W. Mark</string>
+            <key>subtitle</key>
+            <string>Coed residence hall</string>
+            <key>departments</key>
+            <string></string>
+            <key>links</key>
+            <string>http://www.winona.edu/housing/newhall.asp</string>
+        </dict>
+    </array>
+</plist>
