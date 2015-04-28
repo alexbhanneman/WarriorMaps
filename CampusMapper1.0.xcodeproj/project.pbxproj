@@ -47,6 +47,19 @@
 		1C8D41091AE9F5F10012A0E1 /* New Center West.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D41071AE9F5F10012A0E1 /* New Center West.jpg */; };
 		1C8D410C1AE9F6F80012A0E1 /* College Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D410A1AE9F6F80012A0E1 /* College Center.jpg */; };
 		1C8D410D1AE9F6F80012A0E1 /* Kryzsko Commons.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D410B1AE9F6F80012A0E1 /* Kryzsko Commons.jpg */; };
+		1C8DE33A1AEF311100FCC785 /* WarriorMapsIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3301AEF311100FCC785 /* WarriorMapsIcon29x29.png */; };
+		1C8DE33B1AEF311100FCC785 /* WarriorMapsIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3311AEF311100FCC785 /* WarriorMapsIcon40x40.png */; };
+		1C8DE33C1AEF311100FCC785 /* WarriorMapsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3321AEF311100FCC785 /* WarriorMapsIcon.png */; };
+		1C8DE33D1AEF311100FCC785 /* WarriorMapsIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3331AEF311100FCC785 /* WarriorMapsIcon58x58.png */; };
+		1C8DE33E1AEF311100FCC785 /* WarriorMapsIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3341AEF311100FCC785 /* WarriorMapsIcon76x76.png */; };
+		1C8DE33F1AEF311100FCC785 /* WarriorMapsIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3351AEF311100FCC785 /* WarriorMapsIcon80x80.png */; };
+		1C8DE3401AEF311100FCC785 /* WarriorMapsIcon87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3361AEF311100FCC785 /* WarriorMapsIcon87x87.png */; };
+		1C8DE3411AEF311100FCC785 /* WarriorMapsIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3371AEF311100FCC785 /* WarriorMapsIcon120x120.png */; };
+		1C8DE3421AEF311100FCC785 /* WarriorMapsIcon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3381AEF311100FCC785 /* WarriorMapsIcon152x152.png */; };
+		1C8DE3431AEF311100FCC785 /* WarriorMapsIcon180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3391AEF311100FCC785 /* WarriorMapsIcon180x180.png */; };
+		1C8DE3461AEF312E00FCC785 /* warriorMapperLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3441AEF312E00FCC785 /* warriorMapperLogo.png */; };
+		1C8DE3471AEF312E00FCC785 /* wsuLogo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE3451AEF312E00FCC785 /* wsuLogo.jpg */; };
+		1C8DE34C1AEF388800FCC785 /* New Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8DE34B1AEF388800FCC785 /* New Launch Screen.xib */; };
 		1CD66F491ACCE05700DC6B5D /* CampusOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */; };
 		1CE496E81AEB08BC006AA98F /* trangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE496E71AEB08BC006AA98F /* trangle.png */; };
 		1CE496EA1AEB0D60006AA98F /* triangle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CE496E91AEB0D60006AA98F /* triangle2.png */; };
@@ -54,7 +67,6 @@
 		570E48F11AC8D560004DC3EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F01AC8D560004DC3EA /* AppDelegate.swift */; };
 		570E48F31AC8D560004DC3EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E48F21AC8D560004DC3EA /* ViewController.swift */; };
 		570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F71AC8D560004DC3EA /* Images.xcassets */; };
-		570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570E48F91AC8D560004DC3EA /* LaunchScreen.xib */; };
 		570E49071AC8D560004DC3EA /* CampusMapper1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E49061AC8D560004DC3EA /* CampusMapper1_0Tests.swift */; };
 		575579121ACB616E002AE6ED /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 575579111ACB616E002AE6ED /* search.png */; };
 		5763AC501AE9F89B00EF5561 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 5763AC4F1AE9F89B00EF5561 /* close.png */; };
@@ -114,6 +126,19 @@
 		1C8D41071AE9F5F10012A0E1 /* New Center West.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "New Center West.jpg"; sourceTree = "<group>"; };
 		1C8D410A1AE9F6F80012A0E1 /* College Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "College Center.jpg"; sourceTree = "<group>"; };
 		1C8D410B1AE9F6F80012A0E1 /* Kryzsko Commons.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Kryzsko Commons.jpg"; sourceTree = "<group>"; };
+		1C8DE3301AEF311100FCC785 /* WarriorMapsIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon29x29.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon29x29.png"; sourceTree = "<group>"; };
+		1C8DE3311AEF311100FCC785 /* WarriorMapsIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon40x40.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon40x40.png"; sourceTree = "<group>"; };
+		1C8DE3321AEF311100FCC785 /* WarriorMapsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon.png"; sourceTree = "<group>"; };
+		1C8DE3331AEF311100FCC785 /* WarriorMapsIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon58x58.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon58x58.png"; sourceTree = "<group>"; };
+		1C8DE3341AEF311100FCC785 /* WarriorMapsIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon76x76.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon76x76.png"; sourceTree = "<group>"; };
+		1C8DE3351AEF311100FCC785 /* WarriorMapsIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon80x80.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon80x80.png"; sourceTree = "<group>"; };
+		1C8DE3361AEF311100FCC785 /* WarriorMapsIcon87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon87x87.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon87x87.png"; sourceTree = "<group>"; };
+		1C8DE3371AEF311100FCC785 /* WarriorMapsIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon120x120.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon120x120.png"; sourceTree = "<group>"; };
+		1C8DE3381AEF311100FCC785 /* WarriorMapsIcon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon152x152.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon152x152.png"; sourceTree = "<group>"; };
+		1C8DE3391AEF311100FCC785 /* WarriorMapsIcon180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = WarriorMapsIcon180x180.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/WarriorMapsIcon180x180.png"; sourceTree = "<group>"; };
+		1C8DE3441AEF312E00FCC785 /* warriorMapperLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warriorMapperLogo.png; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/warriorMapperLogo.png"; sourceTree = "<group>"; };
+		1C8DE3451AEF312E00FCC785 /* wsuLogo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wsuLogo.jpg; path = "../../Final Semester/CS-345 Mobile Apps/CampusMapper1.0/CampusMapper1.0/wsuLogo.jpg"; sourceTree = "<group>"; };
+		1C8DE34B1AEF388800FCC785 /* New Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "New Launch Screen.xib"; path = "../../New Launch Screen.xib"; sourceTree = "<group>"; };
 		1CD66F481ACCE05700DC6B5D /* CampusOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusOverlayView.swift; sourceTree = "<group>"; };
 		1CE496E71AEB08BC006AA98F /* trangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trangle.png; sourceTree = "<group>"; };
 		1CE496E91AEB0D60006AA98F /* triangle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle2.png; sourceTree = "<group>"; };
@@ -123,7 +148,6 @@
 		570E48F01AC8D560004DC3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570E48F21AC8D560004DC3EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		570E48F71AC8D560004DC3EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		570E48FA1AC8D560004DC3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		570E49001AC8D560004DC3EA /* CampusMapper1.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusMapper1.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		570E49051AC8D560004DC3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		570E49061AC8D560004DC3EA /* CampusMapper1_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMapper1_0Tests.swift; sourceTree = "<group>"; };
@@ -155,6 +179,9 @@
 		1C8D408A1AE707CB0012A0E1 /* otherImages */ = {
 			isa = PBXGroup;
 			children = (
+				1C8DE3441AEF312E00FCC785 /* warriorMapperLogo.png */,
+				1C8DE3451AEF312E00FCC785 /* wsuLogo.jpg */,
+				1C8DE32F1AEF30FF00FCC785 /* Icons */,
 				1CE496E91AEB0D60006AA98F /* triangle2.png */,
 				1CE496E71AEB08BC006AA98F /* trangle.png */,
 				1C8D40951AE891B00012A0E1 /* TauCenter_exterior.jpg */,
@@ -198,6 +225,23 @@
 				1C8D40D51AE9C1EF0012A0E1 /* Morey Hall.jpg */,
 			);
 			name = buildingImages;
+			sourceTree = "<group>";
+		};
+		1C8DE32F1AEF30FF00FCC785 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				1C8DE3301AEF311100FCC785 /* WarriorMapsIcon29x29.png */,
+				1C8DE3311AEF311100FCC785 /* WarriorMapsIcon40x40.png */,
+				1C8DE3321AEF311100FCC785 /* WarriorMapsIcon.png */,
+				1C8DE3331AEF311100FCC785 /* WarriorMapsIcon58x58.png */,
+				1C8DE3341AEF311100FCC785 /* WarriorMapsIcon76x76.png */,
+				1C8DE3351AEF311100FCC785 /* WarriorMapsIcon80x80.png */,
+				1C8DE3361AEF311100FCC785 /* WarriorMapsIcon87x87.png */,
+				1C8DE3371AEF311100FCC785 /* WarriorMapsIcon120x120.png */,
+				1C8DE3381AEF311100FCC785 /* WarriorMapsIcon152x152.png */,
+				1C8DE3391AEF311100FCC785 /* WarriorMapsIcon180x180.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		570E48E21AC8D55F004DC3EA = {
@@ -249,8 +293,8 @@
 				1C8D40861AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist */,
 				570E48F71AC8D560004DC3EA /* Images.xcassets */,
 				570E48EF1AC8D560004DC3EA /* Info.plist */,
-				570E48F91AC8D560004DC3EA /* LaunchScreen.xib */,
 				575579111ACB616E002AE6ED /* search.png */,
+				1C8DE34B1AEF388800FCC785 /* New Launch Screen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -354,8 +398,10 @@
 			files = (
 				1C8D40FF1AE9EC9D0012A0E1 /* Sheenhan Hall.jpg in Resources */,
 				1CE496E81AEB08BC006AA98F /* trangle.png in Resources */,
-				570E48FB1AC8D560004DC3EA /* LaunchScreen.xib in Resources */,
+				1C8DE3471AEF312E00FCC785 /* wsuLogo.jpg in Resources */,
+				1C8DE33B1AEF311100FCC785 /* WarriorMapsIcon40x40.png in Resources */,
 				5763AC501AE9F89B00EF5561 /* close.png in Resources */,
+				1C8DE3431AEF311100FCC785 /* WarriorMapsIcon180x180.png in Resources */,
 				1C53B6BE1AD8E61100B74C57 /* mapsLatLongOverlay3.png in Resources */,
 				1C8D40A01AE891B00012A0E1 /* Lourdes_exterior.jpg in Resources */,
 				1CE496EC1AEB11D9006AA98F /* Gazebo.jpg in Resources */,
@@ -370,18 +416,24 @@
 				1C8D40FB1AE9E9680012A0E1 /* Integrated Wellness Complex.jpg in Resources */,
 				1C8D40F71AE9E5FE0012A0E1 /* Gildemeister Hall.jpg in Resources */,
 				1C8D41051AE9EF780012A0E1 /* Main St House.jpg in Resources */,
+				1C8DE33A1AEF311100FCC785 /* WarriorMapsIcon29x29.png in Resources */,
 				575579121ACB616E002AE6ED /* search.png in Resources */,
 				1C8D060C1ACCCE9F000F674B /* campusTestOverlay.png in Resources */,
 				1C8D408C1AE70C220012A0E1 /* black128x128.png in Resources */,
 				1C8D40EB1AE9DD310012A0E1 /* Maxwell Hall.jpg in Resources */,
 				1C8D409F1AE891B00012A0E1 /* TauCenter_exterior.jpg in Resources */,
+				1C8DE3421AEF311100FCC785 /* WarriorMapsIcon152x152.png in Resources */,
 				1C8D40941AE719700012A0E1 /* 40x40.gif in Resources */,
 				1C8D410D1AE9F6F80012A0E1 /* Kryzsko Commons.jpg in Resources */,
 				1C8D40F11AE9E1D00012A0E1 /* Memorial Hall.jpg in Resources */,
+				1C8DE33D1AEF311100FCC785 /* WarriorMapsIcon58x58.png in Resources */,
 				1C8D40901AE70CF10012A0E1 /* trans128x128.png in Resources */,
 				1C8D41081AE9F5F10012A0E1 /* Kirkland Hall.jpg in Resources */,
 				1C8D40D61AE9C1EF0012A0E1 /* Morey Hall.jpg in Resources */,
+				1C8DE3461AEF312E00FCC785 /* warriorMapperLogo.png in Resources */,
 				1C8D40E91AE9DC780012A0E1 /* Pasteur Hall.jpg in Resources */,
+				1C8DE33C1AEF311100FCC785 /* WarriorMapsIcon.png in Resources */,
+				1C8DE33F1AEF311100FCC785 /* WarriorMapsIcon80x80.png in Resources */,
 				570E48F81AC8D560004DC3EA /* Images.xcassets in Resources */,
 				57CA0B4F1AE9B94F00657C3E /* direct.gif in Resources */,
 				1C8D06121ACCD629000F674B /* CampusCoords.plist in Resources */,
@@ -391,8 +443,12 @@
 				1C8D40E11AE9D8B70012A0E1 /* Science Laboratory Center.jpg in Resources */,
 				1C8D40F91AE9E7E40012A0E1 /* Performing Arts Center.jpg in Resources */,
 				1C8D41031AE9EE9A0012A0E1 /* Darrel W Krueger Library.jpg in Resources */,
+				1C8DE3411AEF311100FCC785 /* WarriorMapsIcon120x120.png in Resources */,
 				1C8D40DD1AE9CDE80012A0E1 /* Conway.jpg in Resources */,
+				1C8DE34C1AEF388800FCC785 /* New Launch Screen.xib in Resources */,
+				1C8DE3401AEF311100FCC785 /* WarriorMapsIcon87x87.png in Resources */,
 				1C8D40ED1AE9DEEA0012A0E1 /* Phelps Hall.jpg in Resources */,
+				1C8DE33E1AEF311100FCC785 /* WarriorMapsIcon76x76.png in Resources */,
 				1C8D41011AE9ED980012A0E1 /* Minne Hall.jpg in Resources */,
 				1C8D40871AE6C8AE0012A0E1 /* CampusCoordsBuildings.plist in Resources */,
 			);
@@ -442,17 +498,6 @@
 			targetProxy = 570E49011AC8D560004DC3EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		570E48F91AC8D560004DC3EA /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				570E48FA1AC8D560004DC3EA /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		570E49081AC8D560004DC3EA /* Debug */ = {

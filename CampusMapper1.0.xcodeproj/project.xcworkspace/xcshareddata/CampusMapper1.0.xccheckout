@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>98EC6687-9D58-4A16-8E22-01D1E0FE603B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>CampusMapper1.0</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>46EC34A9386DC802C2A340FCD2A122865B28D301</key>
 		<string>https://github.com/alexbhanneman/CampusMapper1.0.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CampusMapper1.0.xcodeproj/project.xcworkspace</string>
+	<string>CampusMapper1.0.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>46EC34A9386DC802C2A340FCD2A122865B28D301</key>
