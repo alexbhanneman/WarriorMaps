@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var campus: Campus
     private var scrollView = UIScrollView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-300, UIScreen.mainScreen().bounds.height-200, 300, 200))
     var scrolls = [UILabel]()
-    
+    var campusBuildings = [MKAnnotation]()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         let screenSize: CGSize = UIScreen.mainScreen().bounds.size
@@ -206,7 +206,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         }
         scrollView.removeFromSuperview()
         
-        //Search for location
+        
+        //Search through campus buildings
+        for i in 1...campusBuildings.count{
+            var build = campusBuildings[i-1]
+            if(build.title  == searchField.text)
+            {
+                let place = MKPlacemark(coordinate: build.coordinate, addressDictionary: nil)
+                var mk = MKMapItem(placemark: place)
+                mk.name = build.title
+                self.matchingItems.append(mk as MKMapItem)
+            }
+        }
+        
+        //Search for location outside of campus
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchField.text
         request.region = self.map.region
@@ -315,7 +328,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             //DISPLAY DIRECTIONS in SCROLLVIEW
             var title = UILabel(frame: CGRectMake(x, y, 400, 20))
             title.font = UIFont(name: "Times", size: 26)
-            title.textAlignment = .Center;
+            title.textAlignment = .Left;
             title.text = "Directions:"
             scrollView.addSubview(title)
             y = y + 40
@@ -337,7 +350,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         scrollView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).CGColor
         scrollView.layer.borderWidth = 2.0
         scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: y+40)
-        
         
         /*
             ~ADD DISTANCE TO EACH LABEL WHEN CHOOSING DIRECTIONS TO A PLACE
@@ -459,6 +471,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             return nil
         }else if (annotation is BuildingAnnotation){
             println("building anno view")
+            campusBuildings.append(annotation as MKAnnotation)
             let annotationView = BuildingAnnotationView(annotation: annotation, reuseIdentifier: "Campus Building")
             //annotationView.canShowCallout = true
             return annotationView
