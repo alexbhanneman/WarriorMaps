@@ -45,7 +45,7 @@ class ThirdViewController: UIViewController, MKMapViewDelegate {
                 }
             }
             result.font = UIFont(name: "Helvetica", size: 14)
-            result.layer.borderColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1).CGColor
+            result.layer.borderColor = hexStringToUIColor("#009933").CGColor
             result.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
             result.layer.borderWidth = 5.0;
             result.textAlignment = .Center;
@@ -62,8 +62,9 @@ class ThirdViewController: UIViewController, MKMapViewDelegate {
         var searchButton = UILabel(frame: CGRectMake(x,y,width,height))
         searchButton.text = "Search"
         searchButton.font = UIFont(name: "Times", size: 34)
+        searchButton.textColor = UIColor.whiteColor()
         searchButton.textAlignment = .Center;
-        searchButton.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+        searchButton.backgroundColor = hexStringToUIColor("#009933")
         searchButton.userInteractionEnabled = true
         searchButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "searchLocations:"))
         self.scrollView.addSubview(searchButton)
@@ -145,5 +146,28 @@ class ThirdViewController: UIViewController, MKMapViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //util
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+        
+        if (cString.hasPrefix("#")) {
+            cString = cString.substringFromIndex(advance(cString.startIndex, 1))
+        }
+        
+        if (count(cString) != 6) {
+            return UIColor.grayColor()
+        }
+        
+        var rgbValue:UInt32 = 0
+        NSScanner(string: cString).scanHexInt(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
 }

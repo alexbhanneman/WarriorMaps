@@ -23,7 +23,7 @@
 		1C8D40A01AE891B00012A0E1 /* Lourdes_exterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */; };
 		1C8D40D61AE9C1EF0012A0E1 /* Morey Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40D51AE9C1EF0012A0E1 /* Morey Hall.jpg */; };
 		1C8D40D91AE9C7B60012A0E1 /* Richards Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40D81AE9C7B60012A0E1 /* Richards Hall.jpg */; };
-		1C8D40DD1AE9CDE80012A0E1 /* Conway.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40DC1AE9CDE80012A0E1 /* Conway.jpg */; };
+		1C8D40DD1AE9CDE80012A0E1 /* Conway Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40DC1AE9CDE80012A0E1 /* Conway Hall.jpg */; };
 		1C8D40DF1AE9CF410012A0E1 /* Stark Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40DE1AE9CF410012A0E1 /* Stark Hall.jpg */; };
 		1C8D40E11AE9D8B70012A0E1 /* Science Laboratory Center.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40E01AE9D8B70012A0E1 /* Science Laboratory Center.jpg */; };
 		1C8D40E51AE9DA140012A0E1 /* Shepard Hall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C8D40E41AE9DA140012A0E1 /* Shepard Hall.jpg */; };
@@ -102,7 +102,7 @@
 		1C8D40961AE891B00012A0E1 /* Lourdes_exterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lourdes_exterior.jpg; sourceTree = "<group>"; };
 		1C8D40D51AE9C1EF0012A0E1 /* Morey Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Morey Hall.jpg"; sourceTree = "<group>"; };
 		1C8D40D81AE9C7B60012A0E1 /* Richards Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Richards Hall.jpg"; sourceTree = "<group>"; };
-		1C8D40DC1AE9CDE80012A0E1 /* Conway.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Conway.jpg; path = ../Conway.jpg; sourceTree = "<group>"; };
+		1C8D40DC1AE9CDE80012A0E1 /* Conway Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Conway Hall.jpg"; path = "../Conway Hall.jpg"; sourceTree = "<group>"; };
 		1C8D40DE1AE9CF410012A0E1 /* Stark Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Stark Hall.jpg"; sourceTree = "<group>"; };
 		1C8D40E01AE9D8B70012A0E1 /* Science Laboratory Center.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Science Laboratory Center.jpg"; sourceTree = "<group>"; };
 		1C8D40E41AE9DA140012A0E1 /* Shepard Hall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Shepard Hall.jpg"; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 				1C8D40E41AE9DA140012A0E1 /* Shepard Hall.jpg */,
 				1C8D40E01AE9D8B70012A0E1 /* Science Laboratory Center.jpg */,
 				1C8D40DE1AE9CF410012A0E1 /* Stark Hall.jpg */,
-				1C8D40DC1AE9CDE80012A0E1 /* Conway.jpg */,
+				1C8D40DC1AE9CDE80012A0E1 /* Conway Hall.jpg */,
 				1C8D40D81AE9C7B60012A0E1 /* Richards Hall.jpg */,
 				1C8D40D51AE9C1EF0012A0E1 /* Morey Hall.jpg */,
 			);
@@ -444,7 +444,7 @@
 				1C8D40F91AE9E7E40012A0E1 /* Performing Arts Center.jpg in Resources */,
 				1C8D41031AE9EE9A0012A0E1 /* Darrel W Krueger Library.jpg in Resources */,
 				1C8DE3411AEF311100FCC785 /* WarriorMapsIcon120x120.png in Resources */,
-				1C8D40DD1AE9CDE80012A0E1 /* Conway.jpg in Resources */,
+				1C8D40DD1AE9CDE80012A0E1 /* Conway Hall.jpg in Resources */,
 				1C8DE34C1AEF388800FCC785 /* New Launch Screen.xib in Resources */,
 				1C8DE3401AEF311100FCC785 /* WarriorMapsIcon87x87.png in Resources */,
 				1C8D40ED1AE9DEEA0012A0E1 /* Phelps Hall.jpg in Resources */,
