@@ -351,18 +351,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         scrollView.layer.borderWidth = 2.0
         scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: y+40)
         
-        /*
-            ~ADD DISTANCE TO EACH LABEL WHEN CHOOSING DIRECTIONS TO A PLACE
-            ~GET CLOSE BUTTON WORKING FOR DIRECTIONS SCROLLVIEW
-            ~BE ABLE TO SEARCH CAMPUS BUILDINGS AND GET ROUTES TO THEM
-        */
-        
-        var close: UIImageView = UIImageView(image: UIImage(named: "close.png"))
-        close.frame = CGRectMake(200, 200, scrollView.bounds.width, 0)
+        let close: UIImageView = UIImageView(image: UIImage(named: "close.png"))
+        close.frame = CGRectMake(scrollView.bounds.width-40,0,40,30)
         close.userInteractionEnabled = true
+        close.backgroundColor = UIColor.whiteColor()
         close.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "close"))
-        self.view.addSubview(scrollView)
         scrollView.addSubview(close)
+        
+        self.view.addSubview(scrollView)
     }
     
     func close(){

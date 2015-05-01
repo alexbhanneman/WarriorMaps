@@ -67,12 +67,28 @@ class ThirdViewController: UIViewController, MKMapViewDelegate {
         searchButton.backgroundColor = hexStringToUIColor("#009933")
         searchButton.userInteractionEnabled = true
         searchButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "searchLocations:"))
+        
+        let close: UIImageView = UIImageView(image: UIImage(named: "close.png"))
+        close.frame = CGRectMake(UIScreen.mainScreen().bounds.width-70,0,70,50)
+        close.userInteractionEnabled = true
+        close.backgroundColor = UIColor.whiteColor()
+        close.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "close"))
+        
+        self.scrollView.addSubview(close)
         self.scrollView.addSubview(searchButton)
+        
         self.view = scrollView
+        
     }
     
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func close(){
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {
+            self.searchPlaces = [Int]()
+        })
     }
     
     func handleTap(recognizer: UITapGestureRecognizer) {
@@ -102,14 +118,18 @@ class ThirdViewController: UIViewController, MKMapViewDelegate {
             }
             i++
         }
-        
-        for i in 1...self.searchPlaces.count{
-            self.controller.displayDirections(self.items[self.searchPlaces[i-1]])
+        if (self.searchPlaces.count == 0){
+            close()
         }
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: {
-            self.searchPlaces = [Int]()
-            self.controller.resizeMap()
-        })
+        else{
+            for i in 1...self.searchPlaces.count{
+                self.controller.displayDirections(self.items[self.searchPlaces[i-1]])
+            }
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: {
+                self.searchPlaces = [Int]()
+                self.controller.resizeMap()
+            })
+        }
     }
     
     func findAddress(item: MKMapItem, completionHandler: (str: String, error: NSError?) -> ()) -> Void{
